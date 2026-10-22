@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdelrahman Gamal — AI Video Maker &amp; Graphic Designer · EGY · KSA · UAE</title>
+  <meta name="description" content="Abdelrahman Gamal — Graphic Designer (3+ Years) & AI Video Filmmaker (1.5+ Years). Cinematic AI commercials, visual direction, and brand campaigns across Egypt, Saudi Arabia, and the UAE.">
+
+  <!-- Fonts matching Ghaith Ramadan: Clash Display + General Sans + IBM Plex Mono + IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&f[]=general-sans@300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cinematic Split Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="panel t"></div>
+    <div class="panel b"></div>
+    <div class="core">
+      <div class="nm">Abdelrahman&nbsp;Gamal</div>
+      <div class="pct mono" id="loadPct">00%</div>
+    </div>
+  </div>
+
+  <!-- Top Scroll Scrubber & Custom Cursor -->
+  <div class="scrub" aria-hidden="true"><i id="scrubFill"></i></div>
+  <div class="cursor" id="cur"></div>
+  <div class="cursor-ring" id="curRing"><span class="lbl">PLAY</span></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="logo" href="#top">Abdelrahman<b>&nbsp;Gamal</b></a>
+    <div class="nav-links">
+      <a href="#work" data-cursor="link" data-i18n="nav_work">Work</a>
+      <a href="#vault" data-cursor="link" data-i18n="nav_vault">All Videos</a>
+      <a href="#about" data-cursor="link" data-i18n="nav_about">About</a>
+      <a href="#expertise" data-cursor="link" data-i18n="nav_expertise">Expertise</a>
+      <a href="#contact" data-cursor="link" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn magnetic" id="langToggle" data-cursor="link">
+        <span id="langLabel">AR</span>
+      </button>
+      <!-- Icon-Only WhatsApp Button (No Phone Digits Shown) -->
+      <a class="btn solid icon-only magnetic" href="https://wa.me/201126430604" target="_blank" rel="noopener" data-cursor="link" aria-label="Chat on WhatsApp" title="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.535 5.862l-1.535 5.608 5.752-1.509c1.693.922 3.631 1.449 5.694 1.449 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="top">
+    <!-- Ajwad Real Estate Video Playing in Background with Clear Opacity & Subtle Blur -->
+    <div class="media" id="heroMedia">
+      <video id="heroBgVideo" src="p01.mp4" poster="https://drive.google.com/thumbnail?id=1CB0rZjYRNlVtHZxsf3E3qGWRc8wISz4s&sz=w1600" autoplay muted loop playsinline preload="auto"></video>
+    </div>
+    <div class="shade"></div>
+    <span class="tc mono" id="heroTc">DIR · EGY · KSA · UAE · 2026</span>
+
+    <!-- Rotating Showreel Button (Opens Featured Ajwad Video on Click) -->
+    <button class="reel magnetic" id="reelBtn" data-cursor="play" aria-label="Watch featured showreel">
+      <span class="ring mono">◉</span>
+      <span class="mono">Watch<br>Showreel</span>
+    </button>
+
+    <div class="hero-content">
+      <div class="hero-glass">
+        <div class="kick mono"><i></i><span data-i18n="hero_kick">EGY · KSA · UAE · AI Film &amp; Design · 2026</span></div>
+        <h1>
+          <span class="line-rv"><span>Abdelrahman <span class="b">Gamal.</span></span></span>
+          <span class="line-rv"><span data-i18n="hero_h1_line2">Visual stories in <span class="b">AI motion.</span></span></span>
+        </h1>
+        <p class="sub rv" data-i18n="hero_sub">
+          AI Video Maker (1.5+ Years) &amp; Senior Graphic Designer (3+ Years) crafting high-converting AI commercials, medical explainers, real estate films, and brand identities across Egypt, Saudi Arabia, and the UAE.
+        </p>
+        <div class="cta-row rv">
+          <a class="btn solid magnetic" href="#work" data-cursor="link" data-i18n="btn_view_work">View Selected Work</a>
+          <a class="btn magnetic" href="https://wa.me/201126430604" target="_blank" rel="noopener" data-cursor="link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.535 5.862l-1.535 5.608 5.752-1.509c1.693.922 3.631 1.449 5.694 1.449 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
+            </svg>
+            <span data-i18n="btn_msg_whatsapp">Message on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span><b>✦</b>AI Video Filmmaking</span><span><b>✦</b>Senior Graphic Design</span><span><b>✦</b>Real Estate Campaigns</span><span><b>✦</b>Medical AI Films</span><span><b>✦</b>Character Consistency</span><span><b>✦</b>Visual Direction</span>
+      <span><b>✦</b>AI Video Filmmaking</span><span><b>✦</b>Senior Graphic Design</span><span><b>✦</b>Real Estate Campaigns</span><span><b>✦</b>Medical AI Films</span><span><b>✦</b>Character Consistency</span><span><b>✦</b>Visual Direction</span>
+    </div>
+  </div>
+
+  <!-- ================= 01 — FEATURED PROJECTS (5 AUTOPLAY REELS ON SCROLL) ================= -->
+  <section id="work">
+    <div class="wrap">
+      <div class="eyebrow rv"><span class="mono" data-i18n="sec_01_eye">01 — Selected Work</span></div>
+      <h2 class="title"><span class="line-rv"><span data-i18n="sec_01_title">Featured <span class="b">projects</span></span></span></h2>
+
+      <div id="featuredEditorialList" style="margin-top:clamp(34px,5vw,64px)">
+        <!-- Top 5 Featured Videos: Autoplay Muted on Scroll, Click to Watch with Sound -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 — FULL ARCHIVE (STATIC THUMBNAILS — NO AUTOPLAY) ================= -->
+  <section id="vault" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv"><span class="mono" data-i18n="sec_vault_eye">02 — Complete Production Vault</span></div>
+      <h2 class="title"><span class="line-rv"><span data-i18n="sec_vault_title">All <span class="b">AI Productions</span></span></span></h2>
+
+      <div class="vault-controls rv">
+        <div class="filter-pills" id="categoryFilters">
+          <button class="filter-pill active" data-filter="all" data-cursor="link" data-i18n="filter_all">All</button>
+          <button class="filter-pill" data-filter="realestate" data-cursor="link">Real Estate</button>
+          <button class="filter-pill" data-filter="legal" data-cursor="link">Law &amp; Education</button>
+          <button class="filter-pill" data-filter="commercial" data-cursor="link">Commercial Brands</button>
+          <button class="filter-pill" data-filter="medical" data-cursor="link">Medical &amp; Clinics</button>
+        </div>
+        <div class="vault-search">
+          <input type="text" id="searchInput" placeholder="Search client, doctor, brand..." />
+        </div>
+      </div>
+
+      <div class="vault-grid" id="vaultGrid">
+        <!-- Static thumbnail cards injected by app.js — Click to open modal -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 — ABOUT (WITH ORIGINAL PORTRAIT) ================= -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow rv"><span class="mono" data-i18n="sec_02_eye">03 — About</span></div>
+        <p class="lead">
+          <span class="line-rv"><span data-i18n="about_lead_1">I direct visual attention.</span></span>
+          <span class="line-rv"><span data-i18n="about_lead_2">Every prompt, every frame, every</span></span>
+          <span class="line-rv"><span data-i18n="about_lead_3">design has a <span class="b">commercial purpose.</span></span></span>
+        </p>
+        <p class="more rv" data-i18n="about_more">
+          I'm Abdelrahman Gamal — an AI Video Maker (1.5+ years) and Senior Graphic Designer (3+ years) serving clients across Egypt, Saudi Arabia, and the UAE. With 100+ projects delivered, I specialize in turning complex commercial concepts into cinematic AI-driven films, medical awareness campaigns, real estate promos, and cohesive visual identities that look unmistakably premium.
+        </p>
+
+        <div class="facts rv" style="margin-top:36px">
+          <div><span class="k" data-i18n="fact_markets_k">Active Markets</span><span class="v">EGY · KSA · UAE</span></div>
+          <div><span class="k" data-i18n="fact_role_k">Role</span><span class="v">AI Video Maker · Graphic Designer</span></div>
+          <div><span class="k" data-i18n="fact_exp_k">Experience</span><span class="v">3+ Years Design · 1.5+ Years AI Film</span></div>
+          <div><span class="k" data-i18n="fact_proj_k">Projects Delivered</span><span class="v">100+ Projects</span></div>
+          <div><span class="k" data-i18n="fact_ai_k">AI Video Stack</span><span class="v">Kling · Runway Gen-3 · Veo · Sora · Luma</span></div>
+          <div><span class="k" data-i18n="fact_img_k">Image &amp; Audio AI</span><span class="v">Midjourney v6 · Flux.1 · ElevenLabs · SyncLabs</span></div>
+          <div><span class="k" data-i18n="fact_post_k">Post &amp; Design</span><span class="v">Photoshop · Premiere · After Effects · Illustrator</span></div>
+        </div>
+      </div>
+
+      <!-- Original Uncropped Portrait Photo with Natural Background & Saturation -->
+      <div class="about-profile-box rv">
+        <div class="about-portrait-card mask-rv">
+          <img src="profile.jpg" alt="Abdelrahman Gamal">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 — EXPERTISE ================= -->
+  <section id="expertise" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv"><span class="mono" data-i18n="sec_03_eye">04 — Expertise &amp; AI Tools</span></div>
+      <h2 class="title"><span class="line-rv"><span data-i18n="sec_03_title">What I <span class="b">deliver</span></span></span></h2>
+      <div style="margin-top:clamp(30px,4vw,56px)">
+        <div class="exp-row rv"><span class="idx mono">E—01</span><h3 data-i18n="exp_1_t">AI Commercial Filmmaking</h3><p data-i18n="exp_1_d">End-to-end AI video direction using Kling AI, Runway Gen-3 Alpha, Google Veo, OpenAI Sora, and Luma Dream Machine.</p></div>
+        <div class="exp-row rv"><span class="idx mono">E—02</span><h3 data-i18n="exp_2_t">Character &amp; Product Consistency</h3><p data-i18n="exp_2_d">Photorealistic storyboarding, exact product integration, and 4K upscaling via Midjourney v6, Flux.1 Pro, ComfyUI, and Magnific AI.</p></div>
+        <div class="exp-row rv"><span class="idx mono">E—03</span><h3 data-i18n="exp_3_t">Arabic Voiceover &amp; Lip-Sync</h3><p data-i18n="exp_3_d">Natural Egyptian, Saudi, and Gulf voice synthesis and expressive lip-sync powered by ElevenLabs, SyncLabs, Hedra, and HeyGen.</p></div>
+        <div class="exp-row rv"><span class="idx mono">E—04</span><h3 data-i18n="exp_4_t">Real Estate &amp; Corporate Films</h3><p data-i18n="exp_4_d">High-impact National Day campaigns, property developer films, and law firm spots tailored for KSA, UAE, and Egypt.</p></div>
+        <div class="exp-row rv"><span class="idx mono">E—05</span><h3 data-i18n="exp_5_t">Medical &amp; Healthcare Reels</h3><p data-i18n="exp_5_d">Specialized 3D-style medical explainers and patient journey reels for surgeons, dental clinics, and diagnostic centers.</p></div>
+        <div class="exp-row rv"><span class="idx mono">E—06</span><h3 data-i18n="exp_6_t">Senior Graphic Design &amp; Branding</h3><p data-i18n="exp_6_d">3+ years crafting visual identities, social media manipulation, Arabic typography, and art direction in Photoshop &amp; Illustrator.</p></div>
+        <div class="exp-row rv"><span class="idx mono">E—07</span><h3 data-i18n="exp_7_t">Cinematic Editing &amp; Post-Production</h3><p data-i18n="exp_7_d">Seamless assembly, sound design, SFX mastering, and color grading in Adobe Premiere Pro, After Effects, and Topaz Video AI.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 — TRACK RECORD ================= -->
+  <section class="ach">
+    <div class="wrap">
+      <div class="eyebrow rv"><span class="mono" data-i18n="sec_04_eye">05 — Track Record</span></div>
+      <div class="grid" style="margin-top:clamp(20px,3vw,36px)">
+        <div class="stat rv"><b><span data-count="3">0</span><em>+</em></b><span data-i18n="stat_1_l">Years in Graphic Design</span></div>
+        <div class="stat rv"><b><span>1.5</span><em>+</em></b><span data-i18n="stat_2_l">Years in AI Video Production</span></div>
+        <div class="stat rv"><b><span data-count="100">0</span><em>+</em></b><span data-i18n="stat_3_l">Projects Delivered</span></div>
+      </div>
+      <div class="inds rv">
+        <span>Egypt (EGY)</span><span>Saudi Arabia (KSA)</span><span>United Arab Emirates (UAE)</span><span>Real Estate</span><span>Medical &amp; Surgeons</span><span>Law Firms</span><span>Commercial Brands</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 06 — CONTACT (BOTTOM OF PAGE WITH GMAIL) ================= -->
+  <section class="contact" id="contact">
+    <div class="halo" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="eyebrow rv" style="justify-content:center"><span class="mono" data-i18n="sec_05_eye">06 — Contact</span></div>
+      <h2 class="big">
+        <span class="line-rv"><span data-i18n="contact_h_1">Let's make it</span></span>
+        <span class="line-rv"><span data-i18n="contact_h_2"><span class="b">unforgettable.</span></span></span>
+      </h2>
+      <p class="rv" data-i18n="contact_sub">AI commercial film, medical campaign, or full visual system — reach out directly via WhatsApp or Email.</p>
+      <div class="cta-row rv" style="margin-top:42px">
+        <!-- Clean WhatsApp Icon Button -->
+        <a class="btn solid magnetic" href="https://wa.me/201126430604" target="_blank" rel="noopener" data-cursor="link" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.535 5.862l-1.535 5.608 5.752-1.509c1.693.922 3.631 1.449 5.694 1.449 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+        <a class="btn magnetic" href="mailto:abdelrahmang126@gmail.com" data-cursor="link">Start a Project by Email</a>
+      </div>
+      <!-- Gmail at the Bottom of the Page -->
+      <div class="channels rv">
+        <a href="mailto:abdelrahmang126@gmail.com" data-cursor="link">abdelrahmang126@gmail.com</a>
+        <a href="https://drive.google.com/drive/folders/1YtzF15MOMjUyhiniyzB8sfEVRfMZ0K0b" target="_blank" rel="noopener" data-cursor="link">Google Drive Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="mono">Abdelrahman Gamal — AI Film · Graphic Design · Direction</span>
+    <span class="mono">EGY · KSA · UAE · <span id="localTime">--:--</span></span>
+    <span class="mono"><a href="mailto:abdelrahmang126@gmail.com">abdelrahmang126@gmail.com</a> · © <span id="yr"></span></span>
+  </footer>
+
+  <!-- Lightbox Modal (Plays Video With Sound When User Clicks) -->
+  <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Project video">
+    <div class="frame">
+      <button class="close" id="modalClose" aria-label="Close video">Close ✕</button>
+      <div class="iframe-wrap">
+        <video id="modalVideo" controls playsinline style="display:none;"></video>
+        <iframe id="modalIframe" src="" allow="autoplay; fullscreen" allowfullscreen style="display:none;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
