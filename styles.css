@@ -1300,17 +1300,35 @@ footer .mono {
 .modal .frame {
   position: relative;
   width: 100%;
-  max-width: min(94vw, 960px);
+  max-width: min(92vw, 520px);
+  margin-top: 24px;
 }
 
 .modal .iframe-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: min(78svh, 760px);
+  min-height: 480px;
   background: #000;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .75);
+}
+
+@media (max-width: 640px) {
+  .modal {
+    padding: 12px;
+  }
+  .modal .frame {
+    max-width: 94vw;
+    margin-top: 28px;
+  }
+  .modal .iframe-wrap {
+    height: 76svh;
+    min-height: 440px;
+    border-radius: 12px;
+  }
 }
 
 .modal iframe,
@@ -1327,10 +1345,12 @@ footer .mono {
 }
 
 .modal.img-mode .iframe-wrap {
-  aspect-ratio: auto;
-  max-height: 85vh;
+  height: auto;
+  min-height: 0;
+  max-height: 84svh;
   background: transparent;
   border: none;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
