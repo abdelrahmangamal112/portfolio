@@ -37,7 +37,8 @@
     <a class="logo" href="#top">Abdelrahman<b>&nbsp;Gamal</b></a>
     <div class="nav-links">
       <a href="#work" data-cursor="link" data-i18n="nav_work">Work</a>
-      <a href="#vault" data-cursor="link" data-i18n="nav_vault">All Videos</a>
+      <a href="#vault" data-cursor="link" data-i18n="nav_vault">Latest Videos</a>
+      <a href="#designs" data-cursor="link" data-i18n="nav_designs">Designs</a>
       <a href="#about" data-cursor="link" data-i18n="nav_about">About</a>
       <a href="#expertise" data-cursor="link" data-i18n="nav_expertise">Expertise</a>
       <a href="#contact" data-cursor="link" data-i18n="nav_contact">Contact</a>
@@ -57,14 +58,14 @@
 
   <!-- ================= HERO ================= -->
   <header class="hero" id="top">
-    <!-- Ajwad Real Estate Video Playing in Background with Clear Opacity & Subtle Blur -->
-    <div class="media" id="heroMedia">
-      <video id="heroBgVideo" src="p01.mp4" poster="https://drive.google.com/thumbnail?id=1CB0rZjYRNlVtHZxsf3E3qGWRc8wISz4s&sz=w1600" autoplay muted loop playsinline preload="auto"></video>
+    <!-- V Cola Video Playing in the Hero Background -->
+    <div class="media" id="heroMedia" style="background-image: url('https://drive.google.com/thumbnail?id=1g7YyZlvHBz3i0ZnW30OwRSXSpUrae4Nk&sz=w1600');">
+      <video id="heroBgVideo" src="vcola-bg.mp4" poster="https://drive.google.com/thumbnail?id=1g7YyZlvHBz3i0ZnW30OwRSXSpUrae4Nk&sz=w1600" autoplay muted loop playsinline preload="auto"></video>
     </div>
     <div class="shade"></div>
     <span class="tc mono" id="heroTc">DIR · EGY · KSA · UAE · 2026</span>
 
-    <!-- Rotating Showreel Button (Opens Featured Ajwad Video on Click) -->
+    <!-- Rotating Showreel Button (Opens Featured V Cola Video on Click) -->
     <button class="reel magnetic" id="reelBtn" data-cursor="play" aria-label="Watch featured showreel">
       <span class="ring mono">◉</span>
       <span class="mono">Watch<br>Showreel</span>
@@ -101,23 +102,24 @@
     </div>
   </div>
 
-  <!-- ================= 01 — FEATURED PROJECTS (5 AUTOPLAY REELS ON SCROLL) ================= -->
+  <!-- ================= 01 — FEATURED PROJECTS (GOOGLE DRIVE FULL QUALITY) ================= -->
   <section id="work">
     <div class="wrap">
       <div class="eyebrow rv"><span class="mono" data-i18n="sec_01_eye">01 — Selected Work</span></div>
       <h2 class="title"><span class="line-rv"><span data-i18n="sec_01_title">Featured <span class="b">projects</span></span></span></h2>
 
       <div id="featuredEditorialList" style="margin-top:clamp(34px,5vw,64px)">
-        <!-- Top 5 Featured Videos: Autoplay Muted on Scroll, Click to Watch with Sound -->
+        <!-- Featured Videos from Google Drive in Full Original Quality -->
       </div>
     </div>
   </section>
 
-  <!-- ================= 02 — FULL ARCHIVE (STATIC THUMBNAILS — NO AUTOPLAY) ================= -->
+  <!-- ================= 02 — LATEST 15 AI VIDEOS (FULL DRIVE QUALITY) ================= -->
   <section id="vault" style="padding-top:0">
     <div class="wrap">
-      <div class="eyebrow rv"><span class="mono" data-i18n="sec_vault_eye">02 — Complete Production Vault</span></div>
-      <h2 class="title"><span class="line-rv"><span data-i18n="sec_vault_title">All <span class="b">AI Productions</span></span></span></h2>
+      <div class="eyebrow rv"><span class="mono" data-i18n="sec_vault_eye">02 — Latest Curated Productions (Top 15)</span></div>
+      <h2 class="title"><span class="line-rv"><span data-i18n="sec_vault_title">Latest <span class="b">AI Videos</span></span></span></h2>
+      <p class="sec-note rv" data-i18n="sec_vault_note">Showing our latest 15 featured productions only — a curated selection from 1000+ delivered projects.</p>
 
       <div class="vault-controls rv">
         <div class="filter-pills" id="categoryFilters">
@@ -138,25 +140,45 @@
     </div>
   </section>
 
-  <!-- ================= 03 — ABOUT (WITH ORIGINAL PORTRAIT) ================= -->
+  <!-- ================= 03 — GRAPHIC DESIGN & BRAND CAMPAIGNS (8 CLIENTS × 5 DESIGNS) ================= -->
+  <section id="designs" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv"><span class="mono" data-i18n="sec_designs_eye">03 — Graphic Design &amp; Visual Identity (Latest Works)</span></div>
+      <h2 class="title"><span class="line-rv"><span data-i18n="sec_designs_title">Latest Brand <span class="b">Campaigns</span></span></span></h2>
+      <p class="sec-note rv" data-i18n="sec_designs_note">Featuring our latest visual identity and social media campaigns only — selected from 1000+ delivered brand projects.</p>
+
+      <div class="vault-controls rv">
+        <div class="filter-pills" id="designClientFilters">
+          <button class="filter-pill active" data-client="all" data-cursor="link" data-i18n="filter_all_clients">All Clients</button>
+          <!-- Client filter buttons populated by app.js -->
+        </div>
+      </div>
+
+      <div class="design-clients-wrap" id="designClientsWrap">
+        <!-- 8 Clients × 5 Cohesive Designs injected by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 — ABOUT (WITH ORIGINAL PORTRAIT) ================= -->
   <section class="about" id="about">
     <div class="wrap">
       <div>
-        <div class="eyebrow rv"><span class="mono" data-i18n="sec_02_eye">03 — About</span></div>
+        <div class="eyebrow rv"><span class="mono" data-i18n="sec_02_eye">04 — About</span></div>
         <p class="lead">
           <span class="line-rv"><span data-i18n="about_lead_1">I direct visual attention.</span></span>
           <span class="line-rv"><span data-i18n="about_lead_2">Every prompt, every frame, every</span></span>
           <span class="line-rv"><span data-i18n="about_lead_3">design has a <span class="b">commercial purpose.</span></span></span>
         </p>
         <p class="more rv" data-i18n="about_more">
-          I'm Abdelrahman Gamal — an AI Video Maker (2+ years) and Senior Graphic Designer (3+ years) serving clients across Egypt, Saudi Arabia, and the UAE. With 100+ projects delivered, I specialize in turning complex commercial concepts into cinematic AI-driven films, medical awareness campaigns, real estate promos, and cohesive visual identities that look unmistakably premium.
+          I'm Abdelrahman Gamal — an AI Video Maker (2+ years) and Senior Graphic Designer (3+ years) serving clients across Egypt, Saudi Arabia, and the UAE. With 1000+ projects delivered, I specialize in turning complex commercial concepts into cinematic AI-driven films, medical awareness campaigns, real estate promos, and cohesive visual identities that look unmistakably premium.
         </p>
 
         <div class="facts rv" style="margin-top:36px">
           <div><span class="k" data-i18n="fact_markets_k">Active Markets</span><span class="v">EGY · KSA · UAE</span></div>
           <div><span class="k" data-i18n="fact_role_k">Role</span><span class="v">AI Video Maker · Graphic Designer</span></div>
           <div><span class="k" data-i18n="fact_exp_k">Experience</span><span class="v">3+ Years Design · 2+ Years AI Film</span></div>
-          <div><span class="k" data-i18n="fact_proj_k">Projects Delivered</span><span class="v">100+ Projects</span></div>
+          <div><span class="k" data-i18n="fact_proj_k">Projects Delivered</span><span class="v">1000+ Projects</span></div>
           <div><span class="k" data-i18n="fact_ai_k">AI Video Stack</span><span class="v">Kling · Runway Gen-3 · Veo · Sora · Luma</span></div>
           <div><span class="k" data-i18n="fact_img_k">Image &amp; Audio AI</span><span class="v">Midjourney v6 · Flux.1 · ElevenLabs · SyncLabs</span></div>
           <div><span class="k" data-i18n="fact_post_k">Post &amp; Design</span><span class="v">Photoshop · Premiere · After Effects · Illustrator</span></div>
@@ -172,10 +194,10 @@
     </div>
   </section>
 
-  <!-- ================= 04 — EXPERTISE ================= -->
+  <!-- ================= 05 — EXPERTISE ================= -->
   <section id="expertise" style="padding-top:0">
     <div class="wrap">
-      <div class="eyebrow rv"><span class="mono" data-i18n="sec_03_eye">04 — Expertise &amp; AI Tools</span></div>
+      <div class="eyebrow rv"><span class="mono" data-i18n="sec_03_eye">05 — Expertise &amp; AI Tools</span></div>
       <h2 class="title"><span class="line-rv"><span data-i18n="sec_03_title">What I <span class="b">deliver</span></span></span></h2>
       <div style="margin-top:clamp(30px,4vw,56px)">
         <div class="exp-row rv"><span class="idx mono">E—01</span><h3 data-i18n="exp_1_t">AI Commercial Filmmaking</h3><p data-i18n="exp_1_d">End-to-end AI video direction using Kling AI, Runway Gen-3 Alpha, Google Veo, OpenAI Sora, and Luma Dream Machine.</p></div>
@@ -189,14 +211,14 @@
     </div>
   </section>
 
-  <!-- ================= 05 — TRACK RECORD ================= -->
+  <!-- ================= 06 — TRACK RECORD ================= -->
   <section class="ach">
     <div class="wrap">
-      <div class="eyebrow rv"><span class="mono" data-i18n="sec_04_eye">05 — Track Record</span></div>
+      <div class="eyebrow rv"><span class="mono" data-i18n="sec_04_eye">06 — Track Record</span></div>
       <div class="grid" style="margin-top:clamp(20px,3vw,36px)">
         <div class="stat rv"><b><span data-count="3">0</span><em>+</em></b><span data-i18n="stat_1_l">Years in Graphic Design</span></div>
         <div class="stat rv"><b><span data-count="2">0</span><em>+</em></b><span data-i18n="stat_2_l">Years in AI Video Production</span></div>
-        <div class="stat rv"><b><span data-count="100">0</span><em>+</em></b><span data-i18n="stat_3_l">Projects Delivered</span></div>
+        <div class="stat rv"><b><span data-count="1000">0</span><em>+</em></b><span data-i18n="stat_3_l">Projects Delivered</span></div>
       </div>
       <div class="inds rv">
         <span>Egypt (EGY)</span><span>Saudi Arabia (KSA)</span><span>United Arab Emirates (UAE)</span><span>Real Estate</span><span>Medical &amp; Surgeons</span><span>Law Firms</span><span>Commercial Brands</span>
@@ -204,11 +226,11 @@
     </div>
   </section>
 
-  <!-- ================= 06 — CONTACT (BOTTOM OF PAGE WITH GMAIL) ================= -->
+  <!-- ================= 07 — CONTACT (BOTTOM OF PAGE WITH GMAIL) ================= -->
   <section class="contact" id="contact">
     <div class="halo" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="eyebrow rv" style="justify-content:center"><span class="mono" data-i18n="sec_05_eye">06 — Contact</span></div>
+      <div class="eyebrow rv" style="justify-content:center"><span class="mono" data-i18n="sec_05_eye">07 — Contact</span></div>
       <h2 class="big">
         <span class="line-rv"><span data-i18n="contact_h_1">Let's make it</span></span>
         <span class="line-rv"><span data-i18n="contact_h_2"><span class="b">unforgettable.</span></span></span>
@@ -238,13 +260,13 @@
     <span class="mono"><a href="mailto:abdelrahmang126@gmail.com">abdelrahmang126@gmail.com</a> · © <span id="yr"></span></span>
   </footer>
 
-  <!-- Lightbox Modal (Plays Video With Sound When User Clicks) -->
-  <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Project video">
+  <!-- Lightbox Modal (Plays Google Drive Video or Displays Full-Res Design) -->
+  <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Media preview">
     <div class="frame">
-      <button class="close" id="modalClose" aria-label="Close video">Close ✕</button>
+      <button class="close" id="modalClose" aria-label="Close preview">Close ✕</button>
       <div class="iframe-wrap">
-        <video id="modalVideo" controls playsinline style="display:none;"></video>
         <iframe id="modalIframe" src="" allow="autoplay; fullscreen" allowfullscreen style="display:none;"></iframe>
+        <img id="modalImage" src="" alt="" style="display:none;" referrerpolicy="no-referrer" />
       </div>
     </div>
   </div>

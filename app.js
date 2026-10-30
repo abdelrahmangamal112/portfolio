@@ -1,30 +1,28 @@
 /* ==========================================================
    ABDELRAHMAN GAMAL — PORTFOLIO · "DIRECTOR'S CUT"
    Inspired by Ghaith Ramadan's Editorial Architecture
-   Click-to-Play (No Autoplay), Custom Cursor, Magnetic Buttons
+   Full-Quality Google Drive Playback + 8-Client Design Showcase
    ========================================================== */
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
-/* ---------- Featured Editorial Showcase (Top 3 Selected Works — Autoplay on Scroll) ---------- */
+/* ---------- Featured Editorial Showcase (Full Quality via Google Drive) ---------- */
 const FEATURED_EDITORIAL = [
   {
     idx: "P—01",
     id: "1CB0rZjYRNlVtHZxsf3E3qGWRc8wISz4s",
-    videoSrc: "p01.mp4",
     title: "Ajwad Real Estate — National Day Film",
     titleAr: "أجود للعقارات — فيلم اليوم الوطني السعودي",
-    desc: "A high-impact AI real estate campaign engineered for Saudi National Day — combining architectural grandeur, smooth camera motion, and authentic Gulf storytelling.",
-    descAr: "حملة إعلانية سينمائية بالذكاء الاصطناعي لشركة أجود للعقارات بمناسبة اليوم الوطني السعودي — تجمع بين الفخامة المعمارية وحركة الكاميرا الانسيابية.",
-    direction: "Direction — architectural prestige in every frame.",
-    directionAr: "الإخراج — فخامة معمارية في كل كادر.",
-    tags: ["Real Estate", "AI Film + Direction", "KSA"]
+    desc: "A high-impact AI real estate campaign engineered for Saudi National Day — all images and properties featured in this film are 100% real-world Ajwad projects on the ground (not fictional or imaginary concepts), brought to life with cinematic AI motion.",
+    descAr: "حملة إعلانية سينمائية بالذكاء الاصطناعي لشركة أجود للعقارات بمناسبة اليوم الوطني السعودي — جميع الصور والمشاريع المعروضة في الفيديو هي مشاريع حقيقية تماماً على أرض الواقع وليست خيالية، تم تحريكها وإخراجها سينمائياً بالذكاء الاصطناعي.",
+    direction: "Direction — real-world architectural projects in AI motion.",
+    directionAr: "الإخراج — مشاريع عقارية حقيقية على أرض الواقع برؤية سينمائية.",
+    tags: ["Real Estate", "Real Projects + AI Motion", "KSA"]
   },
   {
     idx: "P—02",
     id: "1kCFvNdgEC2WYJObdbv4EPuKlD9lx4wgP",
-    videoSrc: "p02.mp4",
     title: "Safes Shop — 'The Tank' Commercial",
     titleAr: "Safes Shop لأنظمة الأمان — إعلان الدبابة",
     desc: "Cinematic product storytelling showcasing extreme durability and security through dramatic AI environments, sound design, and high-contrast visual grading.",
@@ -35,8 +33,18 @@ const FEATURED_EDITORIAL = [
   },
   {
     idx: "P—03",
+    id: "1g7YyZlvHBz3i0ZnW30OwRSXSpUrae4Nk",
+    title: "V Cola — Viral AI Commercial",
+    titleAr: "إعلان V Cola — حملة إعلانية بالذكاء الاصطناعي",
+    desc: "High-energy beverage commercial crafted with dynamic AI fluid simulation, vibrant lighting, and fast-paced editorial rhythm.",
+    descAr: "إعلان تجاري سينمائي لعلامة V Cola يجمع بين الحيوية، والمؤثرات البصرية الخاطفة، والإخراج الإعلاني السريع بالذكاء الاصطناعي.",
+    direction: "Direction — vibrant motion and commercial energy.",
+    directionAr: "الإخراج — حيوية بصرية وإيقاع إعلاني خاطف.",
+    tags: ["Commercial Brand", "AI Commercial Film", "EGY · KSA"]
+  },
+  {
+    idx: "P—04",
     id: "1TdHScd59dwK1RVxS8SHMfomEzWea7a9Y",
-    videoSrc: "p03.mp4",
     title: "Bariatric Surgeon — Thyroid & Weight Campaign",
     titleAr: "جراحات السمنة — الغدة الدرقية والوزن",
     desc: "Cinematic AI medical storytelling explaining the relationship between thyroid function and weight management with lifelike visual metaphors and engaging pacing.",
@@ -44,73 +52,48 @@ const FEATURED_EDITORIAL = [
     direction: "Direction — medical clarity with cinematic hooks.",
     directionAr: "الإخراج — معلومة طبية دقيقة بمشهد سينمائي خاطف.",
     tags: ["Medical & Bariatric", "AI Medical Film", "EGY · UAE"]
+  },
+  {
+    idx: "P—05",
+    id: "1U2Y2qQB2Ln7qKl28Y2gNNcvHu05_w5uY",
+    title: "Tahakom Law Firm — Corporate AI Spot",
+    titleAr: "تحاكم للمحاماة — إعلان رسمي بالذكاء الاصطناعي",
+    desc: "Prestigious legal brand film crafted for the Saudi market, blending authoritative voiceover, photorealistic AI scenes, and refined corporate identity.",
+    descAr: "فيلم إعلاني احترافي لشركة تحاكم للمحاماة في السوق السعودي يجمع بين الفخامة البصرية والرسالة القانونية المؤثرة بالذكاء الاصطناعي.",
+    direction: "Direction — authority, trust, and cinematic polish.",
+    directionAr: "الإخراج — هيبة العلامة التجارية وبصمة سينمائية فاخرة.",
+    tags: ["Law & Corporate", "AI Brand Film", "KSA"]
+  },
+  {
+    idx: "P—06",
+    id: "1r4K9BH45_SmhOe7k0770JLml_O3Wk6LX",
+    title: "Safes Shop — Security Spot",
+    titleAr: "Safes Shop لأنظمة الأمان — إعلان الخزائن الذكية",
+    desc: "High-converting commercial spot highlighting smart safe technology, biometric protection, and peace of mind with crisp product integration and dynamic pacing.",
+    descAr: "إعلان تجاري يبرز تقنيات الخزائن الذكية والحماية الفائقة بأسلوب بصري مشوق يجمع بين دقة المنتج والإخراج السينمائي.",
+    direction: "Direction — product precision and commercial impact.",
+    directionAr: "الإخراج — إبراز تفاصيل المنتج بقوة إعلانية.",
+    tags: ["Commercial Brand", "AI Product Film", "EGY"]
   }
 ];
 
-/* ---------- Full 53 Videos Archive ---------- */
-const RECENT_CAMPAIGNS = [
-  { id: "1CB0rZjYRNlVtHZxsf3E3qGWRc8wISz4s", title: "Ajwad Real Estate — National Day Offer", titleAr: "أجود للعقارات — عرض اليوم الوطني السعودي", folder: "1-اجود للعقارات", category: "realestate", region: "KSA" },
-  { id: "1Q8rFkpYcS-BHZW4JH-j9s7QL-nKrvx0w", title: "Tahakom Law Firm — National Day Film", titleAr: "تحاكم للمحاماة — فيلم اليوم الوطني", folder: "2-تحاكم للمحاماة", category: "legal", region: "KSA" },
-  { id: "1U2Y2qQB2Ln7qKl28Y2gNNcvHu05_w5uY", title: "Tahakom Law Firm — Corporate AI Spot", titleAr: "تحاكم للمحاماة — إعلان رسمي بالذكاء الاصطناعي", folder: "2-تحاكم للمحاماة", category: "legal", region: "KSA" },
-  { id: "1kCFvNdgEC2WYJObdbv4EPuKlD9lx4wgP", title: "Safes Shop — The Tank Safe Ad", titleAr: "Safes Shop لأنظمة الأمان — إعلان الدبابة", folder: "3-Safes Shop", category: "commercial", region: "EGY" },
-  { id: "1UFXQnRDYMVfhK6kH_uyAA3gmzqwzgEPC", title: "Safes Shop — Showroom Campaign", titleAr: "Safes Shop لأنظمة الأمان — إعلان المعرض", folder: "3-Safes Shop", category: "commercial", region: "EGY" },
-  { id: "1flcoDwIyl1o_v1Z6ZpAMZIxt1zogvDpI", title: "Safes Shop — Shanon Safe Promo", titleAr: "Safes Shop لأنظمة الأمان — إعلان شانون", folder: "3-Safes Shop", category: "commercial", region: "EGY" },
-  { id: "1ipdjthBLfuna6jPn67WGxf1wEWmNfM-z", title: "Safes Shop — Study Chair Promo", titleAr: "Safes Shop — إعلان كرسي المذاكرة", folder: "3-Safes Shop", category: "commercial", region: "EGY" },
-  { id: "1TdHScd59dwK1RVxS8SHMfomEzWea7a9Y", title: "Bariatric Surgeon — Thyroid & Weight", titleAr: "جراحات السمنة — الغدة الدرقية", folder: "4-Bariatric Surgeon", category: "medical", region: "EGY · UAE" },
-  { id: "1jjwSzx0RlpqjmnAm-Ju0mS1KpSbAZpPZ", title: "Bariatric Surgeon — Patient Journey", titleAr: "جراحات السمنة — المشاركة والتجربة", folder: "4-Bariatric Surgeon", category: "medical", region: "EGY · UAE" },
-  { id: "1tSvbxu-WVYT-a-uQ3ojMphU08KhY9t8e", title: "Bariatric Surgeon — Choosing the Right Surgery", titleAr: "جراحات السمنة — اختيار العملية المناسبة", folder: "5-Bariatric Surgeon 2", category: "medical", region: "EGY · UAE" },
-  { id: "1oIw_fjLv2G2D9vJhZJ1UnMr2dVsZVNpF", title: "Dental Aesthetics — Hollywood Veneers", titleAr: "طب الأسنان التجميلي — الفينير", folder: "6-Dentist", category: "medical", region: "EGY · UAE" },
-  { id: "18jHwax3SUdWbOqmNQvqlkhJ-sfP9EVo0", title: "Dental Clinic — Wisdom Tooth AI Explainer", titleAr: "عيادة الأسنان — ضرس العقل", folder: "6-Dentist", category: "medical", region: "EGY · UAE" },
-  { id: "18a-lG147yTYLBauuIOUxCXgnkbztudF_", title: "General Surgeon — Medical Awareness", titleAr: "الجراحة العامة — توعية طبية بالذكاء الاصطناعي", folder: "7-General Surgeon", category: "medical", region: "EGY · KSA" },
-  { id: "1e2PrwIP3y7lN6ommKXT8EzcRcpnDO-Pe", title: "Vascular Surgeon — Laser Treatment", titleAr: "جراحة الأوعية الدموية — العلاج بالليزر", folder: "8-Vascular Surgeon", category: "medical", region: "EGY · UAE" },
-  { id: "1IdpuUQe36BufTO48LXdlNw2y-xk7mKtN", title: "Vascular Surgeon — Pain After Walking", titleAr: "جراحة الأوعية الدموية — آلام المشي", folder: "8-Vascular Surgeon", category: "medical", region: "EGY · UAE" },
-  { id: "1xMXZ5LXPDYrsLq0an-jB8NHYj20S_8bV", title: "Vascular Surgeon — Warning Signs", titleAr: "جراحة الأوعية الدموية — علامات تحذيرية", folder: "8-Vascular Surgeon", category: "medical", region: "EGY · UAE" },
-  { id: "1mzeavIw0DGJWLWaDXDA_6uP98KG8FO_5", title: "Teama Lab — Medical Diagnostics Ad 1", titleAr: "معامل طعيمة — إعلان التحاليل الطبية ١", folder: "9-Teama Lab", category: "medical", region: "EGY" },
-  { id: "1h3TIlCXGhjPSEi-WcxpmarCVTo_YAhwT", title: "Teama Lab — Medical Diagnostics Ad 2", titleAr: "معامل طعيمة — إعلان التحاليل الطبية ٢", folder: "9-Teama Lab", category: "medical", region: "EGY" },
-  { id: "1yQhiv3FpOpDlUrV47YRg8hVS_ZI4F1Xs", title: "Global Scan Radiology — Heart Diagnostics", titleAr: "جلوبال سكان للأشعة — فحوصات القلب", folder: "10-جلوبال سكان", category: "medical", region: "EGY" },
-  { id: "12B9geCB8KtgKvZMAl6ntHG8Qzw1frerV", title: "Global Scan Radiology — Kidney Scan", titleAr: "جلوبال سكان للأشعة — فحوصات الكلى", folder: "10-جلوبال سكان", category: "medical", region: "EGY" },
-  { id: "1EV0iBpuByxE4Wb8U3kE620rzlzmbl5uS", title: "Global Scan Radiology — Gallbladder Scan", titleAr: "جلوبال سكان للأشعة — فحوصات المرارة", folder: "10-جلوبال سكان", category: "medical", region: "EGY" }
-];
-
-const MAIN_VAULT_VIDEOS = [
-  { id: "1g7YyZlvHBz3i0ZnW30OwRSXSpUrae4Nk", title: "01 — V Cola Commercial", titleAr: "٠١ — إعلان V Cola بالذكاء الاصطناعي", category: "commercial", region: "EGY · KSA" },
-  { id: "1FVj8lIR7pOO6SFW2lIiCxZ0KL0zQI83v", title: "02 — Global Scan Center", titleAr: "٠٢ — مركز جلوبال سكان للأشعة", category: "medical", region: "EGY" },
-  { id: "1ZJjWcs3aRptjCbR_lrICWaV-rkAJKAzx", title: "03 — Nader Mansy Campaign I", titleAr: "٠٣ — حملة نادر منسي ١", category: "commercial", region: "EGY · UAE" },
-  { id: "1uXsnWyh-2HPNFjPg4gn7uPTH2w8ka_y3", title: "04 — Dental Clinic Ad", titleAr: "٠٤ — إعلان عيادة الأسنان", category: "medical", region: "EGY · UAE" },
-  { id: "11QqrgrHgqimn_tMWLgWBTV7FGoNx5Odr", title: "05 — ARC Developments Real Estate", titleAr: "٠٥ — شركة ARC للتطوير العقاري", category: "realestate", region: "EGY · UAE" },
-  { id: "1-jdPlWId16-CFNQFTfLFNV4CHfNOqZ0q", title: "06 — Poultry Company Corporate Ad", titleAr: "٠٦ — إعلان شركة الدواجن", category: "commercial", region: "EGY · KSA" },
-  { id: "1r4K9BH45_SmhOe7k0770JLml_O3Wk6LX", title: "07 — Safes Shop Commercial I", titleAr: "٠٧ — إعلان Safes Shop الأول", category: "commercial", region: "EGY" },
-  { id: "1PKA4LghR7qnH-n6QPIIlBk2QT8E7kyIR", title: "08 — Safes Shop Commercial II", titleAr: "٠٨ — إعلان Safes Shop الثاني", category: "commercial", region: "EGY" },
-  { id: "155Acjfq8iDJiRuDP1NjQZ6R9xvsLVtLg", title: "09 — Dr. Abdellatif Medical Reel I", titleAr: "٠٩ — د. عبداللطيف (فيديو طبي ١)", category: "medical", region: "EGY · KSA" },
-  { id: "1dSAf4FdzetVu1HLr2u7YY-5cdhlH2JWg", title: "10 — Global Scan Diagnostics II", titleAr: "١٠ — جلوبال سكان للأشعة ٢", category: "medical", region: "EGY" },
-  { id: "1eVJlullCdPUgiwizFqkUe8vuD2vMHihp", title: "11 — Diamond Brand Campaign I", titleAr: "١١ — حملة Diamond الأولى", category: "commercial", region: "KSA · UAE" },
-  { id: "1WMgmfMMz8PtHthvqBu0wzn-XpUzaMUxc", title: "12 — Dr. Amr Medical Production", titleAr: "١٢ — د. عمرو (إنتاج طبي بالذكاء الاصطناعي)", category: "medical", region: "EGY" },
-  { id: "1vXWwrdMuj7BW0n_nGu3eEJ3Artm5S8D8", title: "13 — Dr. Dashoush Clinic Ad", titleAr: "١٣ — عيادة د. دحشوش", category: "medical", region: "EGY" },
-  { id: "1d-8L_B-MU77AEniUNG3BdljWRl7ltUbl", title: "14 — Dr. Fekry Medical Spot I", titleAr: "١٤ — د. فكري (إعلان طبي ١)", category: "medical", region: "EGY · UAE" },
-  { id: "1rZXOY-N3f72EdmBaBMtFqX36xok8jFNr", title: "15 — Diamond Luxury Spot II", titleAr: "١٥ — حملة Diamond الثانية", category: "commercial", region: "KSA · UAE" },
-  { id: "1PQyi4Lpj2V784X_fXStD3mFGbSW8_SD3", title: "16 — Dr. Hossam Medical Campaign I", titleAr: "١٦ — د. حسام (حملة طبية ١)", category: "medical", region: "EGY" },
-  { id: "1F7W3StEkOZOdJ5JKGtVcR0Nwiin8-JKP", title: "17 — Dr. Fekry Medical Spot II", titleAr: "١٧ — د. فكري (إعلان طبي ٢)", category: "medical", region: "EGY · UAE" },
-  { id: "12aoz_W_mDpUECq9RrPv46AiACIIF8YM-", title: "18 — Dr. Zayan Clinic Production", titleAr: "١٨ — د. زيان (إعلان طبي)", category: "medical", region: "EGY" },
-  { id: "1RzhDn6D5MQFCQZJ2momEJDWGI3idaot1", title: "19 — Helm Academy Educational Promo", titleAr: "١٩ — أكاديمية حلم التعليمية", category: "legal", region: "EGY · KSA" },
-  { id: "1ijl2asSxxVXe3R6z9myshF0U9HlVy2i7", title: "20 — Nader Mansy Campaign II", titleAr: "٢٠ — حملة نادر منسي ٢", category: "commercial", region: "EGY · UAE" },
-  { id: "1K1SpqSEcLn_gcLwAiOtmSnRu0v0VPfZV", title: "21 — Diamond Brand Campaign III", titleAr: "٢١ — حملة Diamond الثالثة", category: "commercial", region: "KSA · UAE" },
-  { id: "1cLQR5KerAcW5TO7XWzehD_cO3RACZcTj", title: "22 — Dr. Hossam Medical Campaign II", titleAr: "٢٢ — د. حسام (حملة طبية ٢)", category: "medical", region: "EGY" },
-  { id: "1OT4gCLlnW4r0AsTRjcc81y_Qob0y-Y0a", title: "23 — Nader Mansy Campaign III", titleAr: "٢٣ — حملة نادر منسي ٣", category: "commercial", region: "EGY · UAE" },
-  { id: "128mjXhWP9x63-liDMKGUB7vitC35QVC4", title: "24 — Dr. Abu Bakr Clinic Spot", titleAr: "٢٤ — د. أبو بكر (إعلان طبي)", category: "medical", region: "EGY · KSA" },
-  { id: "14hau1Tb1uVqF0NtK42kgr0p_OkqdHgQG", title: "25 — Dr. Borham Medical Reel I", titleAr: "٢٥ — د. برهام (فيديو طبي ١)", category: "medical", region: "EGY" },
-  { id: "10zK9KD6Ep4S77MQoxgOht9y2xLdw7rGO", title: "26 — Dr. Fekry Medical Spot III", titleAr: "٢٦ — د. فكري (إعلان طبي ٣)", category: "medical", region: "EGY · UAE" },
-  { id: "1ThBufDphLqzbwAAPsLuyDnXF4kJJcMfi", title: "27 — Dr. Borham Medical Reel II", titleAr: "٢٧ — د. برهام (فيديو طبي ٢)", category: "medical", region: "EGY" },
-  { id: "10Ke_OpF3B1zVk65xOkCt37bOKG2bNkZy", title: "28 — Ana Muhami Legal Platform I", titleAr: "٢٨ — منصة أنا محامي القانونية ١", category: "legal", region: "KSA · UAE" },
-  { id: "1TqBwQwVJPPe4JlpVWte4qpcgie-2E7ts", title: "29 — Ana Muhami Legal Platform II", titleAr: "٢٩ — منصة أنا محامي القانونية ٢", category: "legal", region: "KSA · UAE" },
-  { id: "1oNsJM0fRqDWUWdMOhHcu5aZRzxid0lxF", title: "30 — Diamond Brand Campaign IV", titleAr: "٣٠ — حملة Diamond الرابعة", category: "commercial", region: "KSA · UAE" },
-  { id: "1LSg9A5AW5U00yWVrsHiYC3u76QIPJPLh", title: "31 — Diamond Brand Campaign V", titleAr: "٣١ — حملة Diamond الخامسة", category: "commercial", region: "KSA · UAE" },
-  { id: "1iqQYXtdYZyVu-KIzAgYxQXDy8lGtJKzB", title: "33 — Dr. Abdellatif Medical Reel II", titleAr: "٣٣ — د. عبداللطيف (فيديو طبي ٢)", category: "medical", region: "EGY · KSA" },
-  { id: "1H9SKVv9db5G0oRc10Q5pDTqzN6GyYbiF", title: "34 — Dr. Abdellatif Medical Reel III", titleAr: "٣٤ — د. عبداللطيف (فيديو طبي ٣)", category: "medical", region: "EGY · KSA" }
-];
-
+/* ---------- Latest 15 Curated Videos (Selected from 1000+ Projects) ---------- */
 const ALL_VIDEOS = [
-  ...RECENT_CAMPAIGNS.map(v => ({ ...v, isRecent: true })),
-  ...MAIN_VAULT_VIDEOS.map(v => ({ ...v, isRecent: false, folder: "Archive" }))
+  { id: "1CB0rZjYRNlVtHZxsf3E3qGWRc8wISz4s", title: "Ajwad Real Estate — National Day Film", titleAr: "أجود للعقارات — فيلم اليوم الوطني السعودي", folder: "أجود للعقارات", category: "realestate", region: "KSA" },
+  { id: "1g7YyZlvHBz3i0ZnW30OwRSXSpUrae4Nk", title: "V Cola — AI Commercial Campaign", titleAr: "إعلان V Cola بالذكاء الاصطناعي", folder: "V Cola", category: "commercial", region: "EGY · KSA" },
+  { id: "1U2Y2qQB2Ln7qKl28Y2gNNcvHu05_w5uY", title: "Tahakom Law Firm — Corporate AI Spot", titleAr: "تحاكم للمحاماة — إعلان رسمي بالذكاء الاصطناعي", folder: "تحاكم للمحاماة", category: "legal", region: "KSA" },
+  { id: "1Q8rFkpYcS-BHZW4JH-j9s7QL-nKrvx0w", title: "Tahakom Law Firm — National Day Film", titleAr: "تحاكم للمحاماة — فيلم اليوم الوطني", folder: "تحاكم للمحاماة", category: "legal", region: "KSA" },
+  { id: "1kCFvNdgEC2WYJObdbv4EPuKlD9lx4wgP", title: "Safes Shop — The Tank Safe Ad", titleAr: "Safes Shop لأنظمة الأمان — إعلان الدبابة", folder: "Safes Shop", category: "commercial", region: "EGY" },
+  { id: "1r4K9BH45_SmhOe7k0770JLml_O3Wk6LX", title: "Safes Shop — Security Spot", titleAr: "إعلان Safes Shop للخزائن الذكية", folder: "Safes Shop", category: "commercial", region: "EGY" },
+  { id: "1UFXQnRDYMVfhK6kH_uyAA3gmzqwzgEPC", title: "Safes Shop — Showroom Campaign", titleAr: "Safes Shop لأنظمة الأمان — إعلان المعرض", folder: "Safes Shop", category: "commercial", region: "EGY" },
+  { id: "11QqrgrHgqimn_tMWLgWBTV7FGoNx5Odr", title: "ARC Developments — Real Estate Promo", titleAr: "شركة ARC للتطوير العقاري", folder: "ARC Developments", category: "realestate", region: "EGY · UAE" },
+  { id: "1ZJjWcs3aRptjCbR_lrICWaV-rkAJKAzx", title: "Nader Mansy — Smart Security Campaign", titleAr: "حملة نادر منسي لأنظمة الأمان", folder: "Nader Mansy", category: "commercial", region: "EGY · UAE" },
+  { id: "1eVJlullCdPUgiwizFqkUe8vuD2vMHihp", title: "Diamond — Luxury Brand Campaign", titleAr: "حملة Diamond التجارية", folder: "Diamond", category: "commercial", region: "KSA · UAE" },
+  { id: "1TdHScd59dwK1RVxS8SHMfomEzWea7a9Y", title: "Bariatric Surgeon — Thyroid & Weight", titleAr: "جراحات السمنة — الغدة الدرقية والوزن", folder: "Bariatric Surgeon", category: "medical", region: "EGY · UAE" },
+  { id: "1oIw_fjLv2G2D9vJhZJ1UnMr2dVsZVNpF", title: "Dental Aesthetics — Hollywood Veneers", titleAr: "طب الأسنان التجميلي — الفينير", folder: "Dentist", category: "medical", region: "EGY · UAE" },
+  { id: "1e2PrwIP3y7lN6ommKXT8EzcRcpnDO-Pe", title: "Vascular Surgeon — Laser Treatment", titleAr: "جراحة الأوعية الدموية — العلاج بالليزر", folder: "Vascular Surgeon", category: "medical", region: "EGY · UAE" },
+  { id: "1yQhiv3FpOpDlUrV47YRg8hVS_ZI4F1Xs", title: "Global Scan Radiology — Heart Diagnostics", titleAr: "جلوبال سكان للأشعة — فحوصات القلب", folder: "جلوبال سكان", category: "medical", region: "EGY" },
+  { id: "1mzeavIw0DGJWLWaDXDA_6uP98KG8FO_5", title: "Teama Lab — Medical Diagnostics Ad", titleAr: "معامل طعيمة — إعلان التحاليل الطبية", folder: "Teama Lab", category: "medical", region: "EGY" }
 ];
 
 const CATEGORY_LABELS = {
@@ -120,12 +103,145 @@ const CATEGORY_LABELS = {
   legal: { en: "Law & Education", ar: "محاماة وتعليم" }
 };
 
+/* ---------- 8 Clients × 5 Cohesive Graphic Designs (40 Curated Brand Designs) ---------- */
+const DESIGN_CLIENTS = [
+  {
+    idx: "D—01",
+    key: "safes_shop",
+    clientEn: "Safes Shop — Security Systems",
+    clientAr: "Safes Shop لأنظمة الأمان والخزائن",
+    sectorEn: "Commercial · Security",
+    sectorAr: "أنظمة أمان وخزائن",
+    region: "EGY",
+    designs: [
+      { id: "1om5mSLhCUBSo6SKiAu8SPkCIhXMP_RXt", titleEn: "Smart Security Must Be Intelligent", titleAr: "الأمان لازم يكون ذكي" },
+      { id: "1FJ_lTn9_j_h40V9a4uTwYq1llHXTOkyI", titleEn: "Extreme Impact Resistance", titleAr: "مقاومة فائقة للصدمات" },
+      { id: "1tC2kNoCFBFIXHdj7PUv_cmh9GPJn0Ewu", titleEn: "Fireproof Safe Engineering", titleAr: "حماية قصوى ضد الحريق" },
+      { id: "1u7FyNiZnBE5o5Z7jGP3Sdhvwe77QJDJM", titleEn: "Your Security Is Our Mission", titleAr: "أمانك مسؤوليتنا" },
+      { id: "1FS_h9lmPXK_teMtuT1WU1PE1uXJtTlps", titleEn: "Corporate Security Setup", titleAr: "بنجهز شركتك بأعلى أمان" }
+    ]
+  },
+  {
+    idx: "D—02",
+    key: "nader_mansy",
+    clientEn: "Nader Mansy — Smart Locks & Doors",
+    clientAr: "نادر منسي — الأقفال الذكية والأبواب المصفحة",
+    sectorEn: "Smart Home · Security",
+    sectorAr: "أقفال ذكية وأبواب مصفحة",
+    region: "EGY · UAE",
+    designs: [
+      { id: "1ep4-pUGMW5VfBqKoNZHLOiR_msSokcE4", titleEn: "Protect Your Vehicle", titleAr: "احمي عربيتك بأحدث تقنية" },
+      { id: "1Q3IUnG1cK2EB7ISa9KtyyEBsL63npB3h", titleEn: "Biometric Smart Key", titleAr: "سمارت كي وبصمة ذكية" },
+      { id: "1zqLJKSJs9-TDpSMNxjRBxJKaHzbCjUSA", titleEn: "Armored Door Protection", titleAr: "حماية الأبواب المصفحة" },
+      { id: "1aeM_mZm9-jY1idwx7ArzNz4gP3kHXXpj", titleEn: "Your Personal Vault", titleAr: "بنكك الخاص في بيتك" },
+      { id: "12i98QoQH9DpDKGb9VVeQl1e9eNQiD0nZ", titleEn: "Complete Home Security", titleAr: "أمان البيت المتكامل" }
+    ]
+  },
+  {
+    idx: "D—03",
+    key: "enteqaa",
+    clientEn: "Enteqaa — Poultry & Agribusiness",
+    clientAr: "شركة انتقاء — للإنتاج الداجني والزراعي",
+    sectorEn: "Agribusiness · Corporate",
+    sectorAr: "إنتاج داجني واستثمار",
+    region: "EGY · KSA",
+    designs: [
+      { id: "1yFjCJKJ-3aTA_3z-MTiWdCyPRksHSJCp", titleEn: "What Defines Enteqaa", titleAr: "يعني إيه انتقاء؟" },
+      { id: "1wuN_UMOYkkH817QsY9_ePBJovEwbztQ1", titleEn: "Super Breed Selection", titleAr: "الكتكوت السوبر" },
+      { id: "1UeQmOVYxTtkPHhkBh8rX5gyaf2UJV-kZ", titleEn: "Safe Agricultural Investment", titleAr: "استثمارك في أمان" },
+      { id: "1Yn99Soo7p78zqbPyif7TM_yzOdvQzRch", titleEn: "Guaranteed Farm Yield", titleAr: "مكسبك مضمون" },
+      { id: "1K14fVWFEmH2XuaDgpNT0jhfjBYxa9q-O", titleEn: "Champions Energy Feed", titleAr: "طاقة الأبطال" }
+    ]
+  },
+  {
+    idx: "D—04",
+    key: "dr_mohamed_hossam",
+    clientEn: "Dr. Mohamed Hossam — Bariatric & Laparoscopic",
+    clientAr: "د. محمد حسام — جراحات السمنة والمناظير",
+    sectorEn: "Medical · Surgery",
+    sectorAr: "جراحات السمنة والمناظير",
+    region: "EGY",
+    designs: [
+      { id: "1JU6V2BwpYEdFu9jdxEWukGnNfz3W5omk", titleEn: "Endoscopic Thyroid Surgery", titleAr: "الدرقية بالمنظار بدون جرح" },
+      { id: "1Ni4PydevEWX00zVTMb7Vm0myzhtOV_Is", titleEn: "Don't Miss Life's Best Moments", titleAr: "متخليش لحظة حلوة تفوتك" },
+      { id: "1XKltFAtK8LlCCI8ODCwDh5nPWw3Pnsrj", titleEn: "Laparoscopic Hernia Repair", titleAr: "المنظار وعلاج الفتق" },
+      { id: "1kGwBUGkXc6CfVfZ3CTHXl4quriTepNGR", titleEn: "Life After Gastric Sleeve", titleAr: "حياتك بعد التكميم" },
+      { id: "1z7TfbB3YwI2S0lbg-xg2tqJl0cDcZcYF", titleEn: "Behind Every Successful Surgery", titleAr: "وراء كل جراحة ناجحة" }
+    ]
+  },
+  {
+    idx: "D—05",
+    key: "dr_ahmed_zayan",
+    clientEn: "Dr. Ahmed Zayan — Obesity & General Surgery",
+    clientAr: "د. أحمد زيان — جراحات السمنة المفرطة",
+    sectorEn: "Medical · Bariatric",
+    sectorAr: "جراحات السمنة والتجميل",
+    region: "EGY · KSA",
+    designs: [
+      { id: "1h-99oNpIVMVG3kW_Sfwmo0xxRbad-goD", titleEn: "Surgical Safety Standards", titleAr: "الأمان التام في الجراحة" },
+      { id: "1nIAN3z0vrj0YrfX1mRJf1l6MPVfmsd45", titleEn: "The Right Surgical Decision", titleAr: "قرار العملية الصح" },
+      { id: "1oXswpiASn1NDgPKv2Wd27GPh0U2Eru7e", titleEn: "Don't Delay Your Health", titleAr: "ضريبة تأجيل القرار" },
+      { id: "19YW9noWuns3o9diEBJhbly2j3rrb8Wjy", titleEn: "Joint Relief & Weight Loss", titleAr: "خشونة المفاصل والوزن" },
+      { id: "1Q_k04ATT5zuPuOawJJAcybWJo2vBE_9o", titleEn: "Take Back Control", titleAr: "مفيش حاجة هتتحكم فيك" }
+    ]
+  },
+  {
+    idx: "D—06",
+    key: "dr_amr_abdelbary",
+    clientEn: "Dr. Amr Abdelbary — Vascular Surgery",
+    clientAr: "د. عمرو عبدالباري — جراحة الأوعية الدموية",
+    sectorEn: "Medical · Vascular",
+    sectorAr: "الأوعية الدموية والقسطرة",
+    region: "EGY · UAE",
+    designs: [
+      { id: "19PsA1MvmMXxWtqw4z2QMMaqsaMpSwauG", titleEn: "Carotid Artery Care", titleAr: "علاج تصلب الشرايين" },
+      { id: "1jpPyVCeQsE_IOn1l3WHVBJKl3MfTf0me", titleEn: "Minimally Invasive Recovery", titleAr: "الجرح الصغير والتعافي السريع" },
+      { id: "1D81JQRYaPGmR6YfmwJwpu0YNJ4hw6Nkd", titleEn: "Interventional Catheterization", titleAr: "القسطرة العلاجية الدقيقة" },
+      { id: "1Qg3_BxqRYL0PYUdTZxDFJj6r2tWpu13d", titleEn: "Walking Pain Diagnostics", titleAr: "آلام المشي والشرايين" },
+      { id: "10AEHw2dje0QZ9e12JFxXJeJLzNXZnetg", titleEn: "Laser Varicose Vein Treatment", titleAr: "علاج الدوالي بالليزر" }
+    ]
+  },
+  {
+    idx: "D—07",
+    key: "dr_ahmed_salah",
+    clientEn: "Dr. Ahmed Salah — Dental & Implants Center",
+    clientAr: "د. أحمد صلاح — زراعة وتجميل الأسنان",
+    sectorEn: "Dental · Implants",
+    sectorAr: "زراعة وتجميل الأسنان",
+    region: "EGY · KSA",
+    designs: [
+      { id: "1SH4idzloblW6HuQUz-AouIf-AuP3JH_K", titleEn: "Precision Dental Implants", titleAr: "زراعة الأسنان الفورية" },
+      { id: "14jYPL4-ZkiCCKJmoAs6O3hkS0xsgv1J0", titleEn: "Implants vs Fixed Bridges", titleAr: "زراعة ولا تركيبات؟" },
+      { id: "1Q2quT88QannoMuYYdipFO_cY1s8P7oMU", titleEn: "Upper Jaw Rehabilitation", titleAr: "تأهيل الفك العلوي" },
+      { id: "1ENABCdtFHGz8jpdWewgpBJMqdMSSB4Us", titleEn: "Why Prosthetics Fail", titleAr: "ليه التركيبة باظت؟" },
+      { id: "14CAo4FtwhR0sCCW1mw7dRx9qgr5PgdTf", titleEn: "Gum Health & Periodontics", titleAr: "علاج نزيف اللثة" }
+    ]
+  },
+  {
+    idx: "D—08",
+    key: "global_scan",
+    clientEn: "Global Scan — Radiology & Diagnostics",
+    clientAr: "مركز جلوبال سكان — للأشعة والتشخيص الطبي",
+    sectorEn: "Healthcare · Radiology",
+    sectorAr: "أشعة وتشخيص طبي",
+    region: "EGY",
+    designs: [
+      { id: "1LfIMMqksWI5WPn2oQ702SJz_0R4307ea", titleEn: "The First Moment Ultrasound", titleAr: "أول لحظة تطمئنك" },
+      { id: "14syrW68NmONO6Zr61DovN4XKJZTN8v-n", titleEn: "Pediatric Echocardiography", titleAr: "إيكو الأطفال بأعلى دقة" },
+      { id: "1sG0ee1Ksv0MtD2pUDhU00lIwGZUyarhw", titleEn: "Interactive Diagnostic Awareness", titleAr: "توعية طبية تفاعلية" },
+      { id: "1ktajL5J9ktn9E9V1s93coTj1VsmxAwry", titleEn: "Diagnostic Care Story", titleAr: "دقة التشخيص الطبي" },
+      { id: "1d04hIrgTJV3yzRz8xv32zRZjA6H6VnVN", titleEn: "Medical Radiology Q&A", titleAr: "سؤال وجواب طبي" }
+    ]
+  }
+];
+
 let currentLang = "en";
 let activeCategory = "all";
+let activeDesignClient = "all";
 let searchQuery = "";
 
-function getDriveThumbnail(id) {
-  return `https://drive.google.com/thumbnail?id=${id}&sz=w800`;
+function getDriveThumbnail(id, size = "w800") {
+  return `https://drive.google.com/thumbnail?id=${id}&sz=${size}`;
 }
 
 /* ---------- Cinematic Loader ---------- */
@@ -230,20 +346,7 @@ function observeReveals() {
   document.querySelectorAll('.rv, .line-rv, .mask-rv, h2.title, .lead, h1, .big').forEach(el => io.observe(el));
 }
 
-/* ---------- Scroll Autoplay Observer for Top 5 Featured Videos Only ---------- */
-const featVideoIO = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const vid = entry.target;
-    if (!(vid instanceof HTMLVideoElement)) return;
-    if (entry.isIntersecting) {
-      vid.play().catch(() => {});
-    } else {
-      vid.pause();
-    }
-  });
-}, { threshold: 0.25 });
-
-/* ---------- Render Featured Editorial Projects (Top 5 Autoplay on Scroll) ---------- */
+/* ---------- Render Featured Editorial Projects (Full Quality via Google Drive) ---------- */
 function renderFeaturedEditorial() {
   const container = document.getElementById('featuredEditorialList');
   if (!container) return;
@@ -252,16 +355,15 @@ function renderFeaturedEditorial() {
     const title = currentLang === 'ar' ? p.titleAr : p.title;
     const desc = currentLang === 'ar' ? p.descAr : p.desc;
     const dir = currentLang === 'ar' ? p.directionAr : p.direction;
-    const thumb = getDriveThumbnail(p.id);
-    const watchLbl = currentLang === 'ar' ? 'تشغيل الفيديو بالصوت ←' : 'Watch with sound →';
-    const badgeLbl = currentLang === 'ar' ? '🔊 اضغط للصوت' : '🔊 Tap for sound';
+    const thumb = getDriveThumbnail(p.id, "w1200");
+    const watchLbl = currentLang === 'ar' ? 'تشغيل الفيديو بالجودة الكاملة ←' : 'Watch in full quality →';
 
     return `
       <article class="proj">
-        <div class="thumb mask-rv" data-cursor="play" onclick="openModal('${p.id}', '${p.videoSrc}')">
-          <video class="feat-video" src="${p.videoSrc}" poster="${thumb}" muted loop playsinline preload="metadata"></video>
+        <div class="thumb mask-rv" data-cursor="play" onclick="openModal('${p.id}')">
+          <img src="${thumb}" alt="${title}" loading="lazy" referrerpolicy="no-referrer" />
           <span class="glow"></span>
-          <span class="sound-badge">${badgeLbl}</span>
+          <span class="play-indicator">▶</span>
         </div>
         <div class="info rv">
           <span class="idx mono">${p.idx}</span>
@@ -271,18 +373,17 @@ function renderFeaturedEditorial() {
           <div class="meta">
             ${p.tags.map(t => `<span>${t}</span>`).join('')}
           </div>
-          <span class="open" onclick="openModal('${p.id}', '${p.videoSrc}')" data-cursor="play" role="button" tabindex="0">${watchLbl}</span>
+          <span class="open" onclick="openModal('${p.id}')" data-cursor="play" role="button" tabindex="0">${watchLbl}</span>
         </div>
       </article>
     `;
   }).join('');
 
-  container.querySelectorAll('.feat-video').forEach(v => featVideoIO.observe(v));
   observeReveals();
   bindCursorTargets();
 }
 
-/* ---------- Render Full Archive Vault (Static Thumbnails — No Autoplay) ---------- */
+/* ---------- Render Full Archive Vault (Clean Titles, Full Drive Quality) ---------- */
 function renderVault() {
   const container = document.getElementById('vaultGrid');
   if (!container) return;
@@ -301,12 +402,10 @@ function renderVault() {
     const title = currentLang === 'ar' ? item.titleAr : item.title;
     const catInfo = CATEGORY_LABELS[item.category] || CATEGORY_LABELS.commercial;
     const catLabel = currentLang === 'ar' ? catInfo.ar : catInfo.en;
-    const thumb = getDriveThumbnail(item.id);
-    const featMatch = FEATURED_EDITORIAL.find(f => f.id === item.id);
-    const localSrc = featMatch ? featMatch.videoSrc : '';
+    const thumb = getDriveThumbnail(item.id, "w800");
 
     return `
-      <div class="v-card rv" data-cursor="play" onclick="openModal('${item.id}', '${localSrc}')">
+      <div class="v-card rv" data-cursor="play" onclick="openModal('${item.id}')">
         <div class="v-thumb">
           <img src="${thumb}" alt="${title}" loading="lazy" referrerpolicy="no-referrer" />
           <div class="v-shade"></div>
@@ -328,54 +427,127 @@ function renderVault() {
   bindCursorTargets();
 }
 
-/* ---------- Lightbox Modal (Opens Video Player With Sound on Click) ---------- */
+/* ---------- Render Graphic Design Showcase (8 Clients × 5 Cohesive Designs) ---------- */
+function renderDesignFilters() {
+  const filterWrap = document.getElementById('designClientFilters');
+  if (!filterWrap) return;
+
+  const allLbl = currentLang === 'ar' ? 'كل العملاء' : 'All Clients';
+  const buttonsHtml = [
+    `<button class="filter-pill ${activeDesignClient === 'all' ? 'active' : ''}" data-client="all" data-cursor="link">${allLbl}</button>`,
+    ...DESIGN_CLIENTS.map(c => {
+      const name = currentLang === 'ar' ? c.clientAr.split('—')[0].trim() : c.clientEn.split('—')[0].trim();
+      const isAct = activeDesignClient === c.key ? 'active' : '';
+      return `<button class="filter-pill ${isAct}" data-client="${c.key}" data-cursor="link">${name}</button>`;
+    })
+  ].join('');
+
+  filterWrap.innerHTML = buttonsHtml;
+
+  filterWrap.querySelectorAll('.filter-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeDesignClient = btn.getAttribute('data-client') || 'all';
+      renderDesignFilters();
+      renderDesigns();
+    });
+  });
+
+  bindCursorTargets();
+}
+
+function renderDesigns() {
+  const container = document.getElementById('designClientsWrap');
+  if (!container) return;
+
+  const list = activeDesignClient === 'all'
+    ? DESIGN_CLIENTS
+    : DESIGN_CLIENTS.filter(c => c.key === activeDesignClient);
+
+  container.innerHTML = list.map(client => {
+    const clientTitle = currentLang === 'ar' ? client.clientAr : client.clientEn;
+    const sector = currentLang === 'ar' ? client.sectorAr : client.sectorEn;
+
+    const cardsHtml = client.designs.map(d => {
+      const dTitle = currentLang === 'ar' ? d.titleAr : d.titleEn;
+      const thumbUrl = getDriveThumbnail(d.id, "w800");
+      return `
+        <div class="d-card rv" data-cursor="link" onclick="openImageModal('${d.id}', '${dTitle.replace(/'/g, "\\'")}')">
+          <img src="${thumbUrl}" alt="${dTitle}" loading="lazy" referrerpolicy="no-referrer" />
+          <div class="d-overlay">
+            <span class="d-zoom">⤢</span>
+            <span class="d-caption">${dTitle}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="design-client-block rv">
+        <div class="dc-head">
+          <div class="dc-title-group">
+            <span class="dc-idx mono">${client.idx}</span>
+            <h3>${clientTitle}</h3>
+          </div>
+          <div class="dc-meta">
+            <span class="dc-pill">${sector}</span>
+            <span class="dc-pill muted">${client.region}</span>
+          </div>
+        </div>
+        <div class="design-strip">
+          ${cardsHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  observeReveals();
+  bindCursorTargets();
+}
+
+/* ---------- Lightbox Modal (Plays Google Drive Video or Opens Full-Res Design) ---------- */
 const modal = document.getElementById('videoModal');
 const modalIframe = document.getElementById('modalIframe');
-const modalVideo = document.getElementById('modalVideo');
+const modalImage = document.getElementById('modalImage');
 const mClose = document.getElementById('modalClose');
 
-function openModal(driveId, localSrc = '') {
-  if (!modal) return;
-  const featMatch = FEATURED_EDITORIAL.find(f => f.id === driveId);
-  const srcToPlay = localSrc || (featMatch ? featMatch.videoSrc : '');
-
-  if (srcToPlay && modalVideo) {
-    if (modalIframe) {
-      modalIframe.src = '';
-      modalIframe.style.display = 'none';
-    }
-    modalVideo.style.display = 'block';
-    modalVideo.src = srcToPlay;
-    modalVideo.muted = false;
-    modalVideo.currentTime = 0;
-    modalVideo.play().catch(() => {});
-  } else if (modalIframe) {
-    if (modalVideo) {
-      modalVideo.pause();
-      modalVideo.removeAttribute('src');
-      modalVideo.style.display = 'none';
-    }
-    modalIframe.style.display = 'block';
-    modalIframe.src = `https://drive.google.com/file/d/${driveId}/preview`;
+function openModal(driveId) {
+  if (!modal || !modalIframe) return;
+  modal.classList.remove('img-mode');
+  if (modalImage) {
+    modalImage.src = '';
+    modalImage.style.display = 'none';
   }
+  modalIframe.style.display = 'block';
+  modalIframe.src = `https://drive.google.com/file/d/${driveId}/preview`;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
+function openImageModal(driveId, altTitle = '') {
+  if (!modal || !modalImage) return;
+  modal.classList.add('img-mode');
+  if (modalIframe) {
+    modalIframe.src = '';
+    modalIframe.style.display = 'none';
+  }
+  modalImage.style.display = 'block';
+  modalImage.alt = altTitle;
+  modalImage.src = getDriveThumbnail(driveId, "w1600");
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
   if (!modal) return;
-  if (modalVideo) {
-    modalVideo.pause();
-    modalVideo.removeAttribute('src');
-    modalVideo.load();
-    modalVideo.style.display = 'none';
-  }
   if (modalIframe) {
     modalIframe.src = '';
     modalIframe.style.display = 'none';
   }
-  modal.classList.remove('open');
+  if (modalImage) {
+    modalImage.src = '';
+    modalImage.style.display = 'none';
+  }
+  modal.classList.remove('open', 'img-mode');
   document.body.style.overflow = '';
 }
 
@@ -385,7 +557,14 @@ addEventListener('keydown', e => { if (e.key === 'Escape' && modal && modal.clas
 
 const reelBtn = document.getElementById('reelBtn');
 if (reelBtn) {
-  reelBtn.addEventListener('click', () => openModal('1CB0rZjYRNlVtHZxsf3E3qGWRc8wISz4s', 'p01.mp4'));
+  reelBtn.addEventListener('click', () => openModal('1g7YyZlvHBz3i0ZnW30OwRSXSpUrae4Nk'));
+}
+
+/* ---------- Hero Background Video Autoplay Assurance ---------- */
+const heroBgVideo = document.getElementById('heroBgVideo');
+if (heroBgVideo) {
+  heroBgVideo.muted = true;
+  heroBgVideo.play().catch(() => {});
 }
 
 /* ---------- Count-Up Stats ---------- */
@@ -407,7 +586,8 @@ document.querySelectorAll('[data-count]').forEach(el => sio.observe(el));
 const I18N = {
   en: {
     nav_work: "Work",
-    nav_vault: "All Videos",
+    nav_vault: "Latest Videos",
+    nav_designs: "Designs",
     nav_about: "About",
     nav_expertise: "Expertise",
     nav_contact: "Contact",
@@ -418,27 +598,32 @@ const I18N = {
     btn_msg_whatsapp: "Message on WhatsApp",
     sec_01_eye: "01 — Selected Work",
     sec_01_title: 'Featured <span class="b">projects</span>',
-    sec_vault_eye: "02 — Complete Production Vault",
-    sec_vault_title: 'All <span class="b">AI Productions</span>',
+    sec_vault_eye: "02 — Latest Curated Productions (Top 15)",
+    sec_vault_title: 'Latest <span class="b">AI Videos</span>',
+    sec_vault_note: "Showing our latest 15 featured productions only — a curated selection from 1000+ delivered projects.",
     filter_all: "All",
-    sec_02_eye: "03 — About",
+    sec_designs_eye: "03 — Graphic Design & Visual Identity (Latest Works)",
+    sec_designs_title: 'Latest Brand <span class="b">Campaigns</span>',
+    sec_designs_note: "Featuring our latest visual identity and social media campaigns only — selected from 1000+ delivered brand projects.",
+    sec_02_eye: "04 — About",
     about_lead_1: "I direct visual attention.",
     about_lead_2: "Every prompt, every frame, every",
     about_lead_3: 'design has a <span class="b">commercial purpose.</span>',
-    about_more: "I'm Abdelrahman Gamal — an AI Video Maker (2+ years) and Senior Graphic Designer (3+ years) serving clients across Egypt, Saudi Arabia, and the UAE. With 100+ projects delivered, I specialize in turning complex commercial concepts into cinematic AI-driven films, medical awareness campaigns, real estate promos, and cohesive visual identities that look unmistakably premium.",
+    about_more: "I'm Abdelrahman Gamal — an AI Video Maker (2+ years) and Senior Graphic Designer (3+ years) serving clients across Egypt, Saudi Arabia, and the UAE. With 1000+ projects delivered, I specialize in turning complex commercial concepts into cinematic AI-driven films, medical awareness campaigns, real estate promos, and cohesive visual identities that look unmistakably premium.",
     fact_proj_k: "Projects Delivered",
-    sec_03_eye: "04 — Expertise & AI Tools",
+    sec_03_eye: "05 — Expertise & AI Tools",
     sec_03_title: 'What I <span class="b">deliver</span>',
-    sec_04_eye: "05 — Track Record",
+    sec_04_eye: "06 — Track Record",
     stat_3_l: "Projects Delivered",
-    sec_05_eye: "06 — Contact",
+    sec_05_eye: "07 — Contact",
     contact_h_1: "Let's make it",
     contact_h_2: '<span class="b">unforgettable.</span>',
     contact_sub: "AI commercial film, medical campaign, or full visual system — reach out directly via WhatsApp or Email."
   },
   ar: {
     nav_work: "أبرز الأعمال",
-    nav_vault: "كل الفيديوهات",
+    nav_vault: "أحدث الفيديوهات",
+    nav_designs: "التصميمات",
     nav_about: "عني",
     nav_expertise: "الخبرات والأدوات",
     nav_contact: "تواصل",
@@ -449,20 +634,24 @@ const I18N = {
     btn_msg_whatsapp: "تواصل عبر واتساب",
     sec_01_eye: "01 — أعمال مختارة",
     sec_01_title: 'أبرز <span class="b">المشاريع</span>',
-    sec_vault_eye: "02 — الأرشيف الكامل للأعمال",
-    sec_vault_title: 'معرض أعمال <span class="b">الـ AI</span>',
+    sec_vault_eye: "02 — أحدث الأعمال المختارة فقط (أفضل 15 فيديو)",
+    sec_vault_title: 'أحدث فيديوهات <span class="b">الـ AI</span>',
+    sec_vault_note: "هذه مجموعة مختارة لأحدث وأفضل 15 فيديو فقط — من أصل أكثر من +1000 مشروع تم تنفيذه.",
     filter_all: "الكل",
-    sec_02_eye: "03 — نبذة عني",
+    sec_designs_eye: "03 — التصميم الجرافيكي والهوية البصرية (أحدث الأعمال)",
+    sec_designs_title: 'أحدث حملات <span class="b">التصميمات</span>',
+    sec_designs_note: "يعرض هذا القسم أحدث أعمال التصميمات والهويات البصرية فقط — مختارة من أصل أكثر من +1000 مشروع.",
+    sec_02_eye: "04 — نبذة عني",
     about_lead_1: "أوجّه الانتباه البصري.",
     about_lead_2: "كل مشهد، وكل كادر، وكل",
     about_lead_3: 'تصميم يخدم <span class="b">هدفاً إعلانياً واضحاً.</span>',
-    about_more: "أنا عبدالرحمن جمال — صانع فيديوهات بالذكاء الاصطناعي (خبرة سنتين) ومصمم جرافيك (خبرة 3+ سنوات) في مصر والسعودية والإمارات. مع أكثر من +100 مشروع تم تنفيذه، أتخصص في تحويل الأفكار الإعلانية إلى أفلام سينمائية متكاملة بالـ AI، وحملات طبية وعقارية وهويات بصرية احترافية.",
+    about_more: "أنا عبدالرحمن جمال — صانع فيديوهات بالذكاء الاصطناعي (خبرة سنتين) ومصمم جرافيك (خبرة 3+ سنوات) في مصر والسعودية والإمارات. مع أكثر من +1000 مشروع تم تنفيذه، أتخصص في تحويل الأفكار الإعلانية إلى أفلام سينمائية متكاملة بالـ AI، وحملات طبية وعقارية وهويات بصرية احترافية.",
     fact_proj_k: "عدد المشاريع",
-    sec_03_eye: "04 — الخبرات ومنظومة أدوات الـ AI",
+    sec_03_eye: "05 — الخبرات ومنظومة أدوات الـ AI",
     sec_03_title: 'ماذا <span class="b">أقدم</span>',
-    sec_04_eye: "05 — سجل الإنجازات",
+    sec_04_eye: "06 — سجل الإنجازات",
     stat_3_l: "مشروع تم تنفيذه",
-    sec_05_eye: "06 — تواصل معي",
+    sec_05_eye: "07 — تواصل معي",
     contact_h_1: "لنصنع عملاً",
     contact_h_2: '<span class="b">استثنائياً.</span>',
     contact_sub: "فيلم إعلاني بالـ AI، حملة طبية أو عقارية، أو هوية بصرية متكاملة — تواصل معي مباشرة عبر واتساب أو الإيميل."
@@ -493,17 +682,21 @@ function toggleLanguage() {
 
   renderFeaturedEditorial();
   renderVault();
+  renderDesignFilters();
+  renderDesigns();
 }
 
 /* ---------- Initialize ---------- */
 document.addEventListener('DOMContentLoaded', () => {
   renderFeaturedEditorial();
   renderVault();
+  renderDesignFilters();
+  renderDesigns();
   observeReveals();
   bindCursorTargets();
   bindMagnetic();
 
-  // Filter pills
+  // Video Filter pills
   document.querySelectorAll('#categoryFilters .filter-pill').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#categoryFilters .filter-pill').forEach(b => b.classList.remove('active'));
