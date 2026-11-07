@@ -1461,14 +1461,26 @@ footer .mono {
   gap: 16px;
 }
 
+.design-strip.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.design-strip.cols-7 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 @media (max-width: 1100px) {
-  .design-strip {
+  .design-strip,
+  .design-strip.cols-4,
+  .design-strip.cols-7 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .design-strip {
+  .design-strip,
+  .design-strip.cols-4,
+  .design-strip.cols-7 {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }

@@ -87,9 +87,9 @@ const ALL_VIDEOS = [
   { id: "1r4K9BH45_SmhOe7k0770JLml_O3Wk6LX", title: "Safes Shop — Security Spot", titleAr: "إعلان Safes Shop للخزائن الذكية", folder: "Safes Shop", category: "commercial", region: "EGY" },
   { id: "1UFXQnRDYMVfhK6kH_uyAA3gmzqwzgEPC", title: "Safes Shop — Showroom Campaign", titleAr: "Safes Shop لأنظمة الأمان — إعلان المعرض", folder: "Safes Shop", category: "commercial", region: "EGY" },
   { id: "11QqrgrHgqimn_tMWLgWBTV7FGoNx5Odr", title: "ARC Developments — Real Estate Promo", titleAr: "شركة ARC للتطوير العقاري", folder: "ARC Developments", category: "realestate", region: "EGY · UAE" },
-  { id: "1ZJjWcs3aRptjCbR_lrICWaV-rkAJKAzx", title: "Nader Mansy — Smart Security Campaign", titleAr: "حملة نادر منسي لأنظمة الأمان", folder: "Nader Mansy", category: "commercial", region: "EGY · UAE" },
   { id: "1eVJlullCdPUgiwizFqkUe8vuD2vMHihp", title: "Diamond — Luxury Brand Campaign", titleAr: "حملة Diamond التجارية", folder: "Diamond", category: "commercial", region: "KSA · UAE" },
   { id: "1TdHScd59dwK1RVxS8SHMfomEzWea7a9Y", title: "Bariatric Surgeon — Thyroid & Weight", titleAr: "جراحات السمنة — الغدة الدرقية والوزن", folder: "Bariatric Surgeon", category: "medical", region: "EGY · UAE" },
+  { id: "1jjwSzx0RlpqjmnAm-Ju0mS1KpSbAZpPZ", title: "Bariatric Surgeon — Patient Journey", titleAr: "جراحات السمنة — رحلة وتجربة المريض", folder: "Bariatric Surgeon", category: "medical", region: "EGY · UAE" },
   { id: "1oIw_fjLv2G2D9vJhZJ1UnMr2dVsZVNpF", title: "Dental Aesthetics — Hollywood Veneers", titleAr: "طب الأسنان التجميلي — الفينير", folder: "Dentist", category: "medical", region: "EGY · UAE" },
   { id: "1e2PrwIP3y7lN6ommKXT8EzcRcpnDO-Pe", title: "Vascular Surgeon — Laser Treatment", titleAr: "جراحة الأوعية الدموية — العلاج بالليزر", folder: "Vascular Surgeon", category: "medical", region: "EGY · UAE" },
   { id: "1yQhiv3FpOpDlUrV47YRg8hVS_ZI4F1Xs", title: "Global Scan Radiology — Heart Diagnostics", titleAr: "جلوبال سكان للأشعة — فحوصات القلب", folder: "جلوبال سكان", category: "medical", region: "EGY" },
@@ -103,58 +103,10 @@ const CATEGORY_LABELS = {
   legal: { en: "Law & Education", ar: "محاماة وتعليم" }
 };
 
-/* ---------- 8 Clients × 5 Cohesive Graphic Designs (40 Curated Brand Designs) ---------- */
+/* ---------- Curated Graphic Designs (Medical Clients First + Suhail & Safes Shop) ---------- */
 const DESIGN_CLIENTS = [
   {
     idx: "D—01",
-    key: "safes_shop",
-    clientEn: "Safes Shop — Security Systems",
-    clientAr: "Safes Shop لأنظمة الأمان والخزائن",
-    sectorEn: "Commercial · Security",
-    sectorAr: "أنظمة أمان وخزائن",
-    region: "EGY",
-    designs: [
-      { id: "1om5mSLhCUBSo6SKiAu8SPkCIhXMP_RXt", titleEn: "Smart Security Must Be Intelligent", titleAr: "الأمان لازم يكون ذكي" },
-      { id: "1FJ_lTn9_j_h40V9a4uTwYq1llHXTOkyI", titleEn: "Extreme Impact Resistance", titleAr: "مقاومة فائقة للصدمات" },
-      { id: "1tC2kNoCFBFIXHdj7PUv_cmh9GPJn0Ewu", titleEn: "Fireproof Safe Engineering", titleAr: "حماية قصوى ضد الحريق" },
-      { id: "1u7FyNiZnBE5o5Z7jGP3Sdhvwe77QJDJM", titleEn: "Your Security Is Our Mission", titleAr: "أمانك مسؤوليتنا" },
-      { id: "1FS_h9lmPXK_teMtuT1WU1PE1uXJtTlps", titleEn: "Corporate Security Setup", titleAr: "بنجهز شركتك بأعلى أمان" }
-    ]
-  },
-  {
-    idx: "D—02",
-    key: "nader_mansy",
-    clientEn: "Nader Mansy — Smart Locks & Doors",
-    clientAr: "نادر منسي — الأقفال الذكية والأبواب المصفحة",
-    sectorEn: "Smart Home · Security",
-    sectorAr: "أقفال ذكية وأبواب مصفحة",
-    region: "EGY · UAE",
-    designs: [
-      { id: "1ep4-pUGMW5VfBqKoNZHLOiR_msSokcE4", titleEn: "Protect Your Vehicle", titleAr: "احمي عربيتك بأحدث تقنية" },
-      { id: "1Q3IUnG1cK2EB7ISa9KtyyEBsL63npB3h", titleEn: "Biometric Smart Key", titleAr: "سمارت كي وبصمة ذكية" },
-      { id: "1zqLJKSJs9-TDpSMNxjRBxJKaHzbCjUSA", titleEn: "Armored Door Protection", titleAr: "حماية الأبواب المصفحة" },
-      { id: "1aeM_mZm9-jY1idwx7ArzNz4gP3kHXXpj", titleEn: "Your Personal Vault", titleAr: "بنكك الخاص في بيتك" },
-      { id: "12i98QoQH9DpDKGb9VVeQl1e9eNQiD0nZ", titleEn: "Complete Home Security", titleAr: "أمان البيت المتكامل" }
-    ]
-  },
-  {
-    idx: "D—03",
-    key: "enteqaa",
-    clientEn: "Enteqaa — Poultry & Agribusiness",
-    clientAr: "شركة انتقاء — للإنتاج الداجني والزراعي",
-    sectorEn: "Agribusiness · Corporate",
-    sectorAr: "إنتاج داجني واستثمار",
-    region: "EGY · KSA",
-    designs: [
-      { id: "1yFjCJKJ-3aTA_3z-MTiWdCyPRksHSJCp", titleEn: "What Defines Enteqaa", titleAr: "يعني إيه انتقاء؟" },
-      { id: "1wuN_UMOYkkH817QsY9_ePBJovEwbztQ1", titleEn: "Super Breed Selection", titleAr: "الكتكوت السوبر" },
-      { id: "1UeQmOVYxTtkPHhkBh8rX5gyaf2UJV-kZ", titleEn: "Safe Agricultural Investment", titleAr: "استثمارك في أمان" },
-      { id: "1Yn99Soo7p78zqbPyif7TM_yzOdvQzRch", titleEn: "Guaranteed Farm Yield", titleAr: "مكسبك مضمون" },
-      { id: "1K14fVWFEmH2XuaDgpNT0jhfjBYxa9q-O", titleEn: "Champions Energy Feed", titleAr: "طاقة الأبطال" }
-    ]
-  },
-  {
-    idx: "D—04",
     key: "dr_mohamed_hossam",
     clientEn: "Dr. Mohamed Hossam — Bariatric & Laparoscopic",
     clientAr: "د. محمد حسام — جراحات السمنة والمناظير",
@@ -170,23 +122,22 @@ const DESIGN_CLIENTS = [
     ]
   },
   {
-    idx: "D—05",
+    idx: "D—02",
     key: "dr_ahmed_zayan",
-    clientEn: "Dr. Ahmed Zayan — Obesity & General Surgery",
-    clientAr: "د. أحمد زيان — جراحات السمنة المفرطة",
-    sectorEn: "Medical · Bariatric",
-    sectorAr: "جراحات السمنة والتجميل",
+    clientEn: "Dr. Ahmed Zayan — Bariatric & General Surgery",
+    clientAr: "د. أحمد زيان — استشاري جراحة السمنة والمناظير والجراحة العامة",
+    sectorEn: "Medical · Bariatric & General",
+    sectorAr: "جراحة السمنة والمناظير",
     region: "EGY · KSA",
     designs: [
-      { id: "1h-99oNpIVMVG3kW_Sfwmo0xxRbad-goD", titleEn: "Surgical Safety Standards", titleAr: "الأمان التام في الجراحة" },
-      { id: "1nIAN3z0vrj0YrfX1mRJf1l6MPVfmsd45", titleEn: "The Right Surgical Decision", titleAr: "قرار العملية الصح" },
-      { id: "1oXswpiASn1NDgPKv2Wd27GPh0U2Eru7e", titleEn: "Don't Delay Your Health", titleAr: "ضريبة تأجيل القرار" },
-      { id: "19YW9noWuns3o9diEBJhbly2j3rrb8Wjy", titleEn: "Joint Relief & Weight Loss", titleAr: "خشونة المفاصل والوزن" },
-      { id: "1Q_k04ATT5zuPuOawJJAcybWJo2vBE_9o", titleEn: "Take Back Control", titleAr: "مفيش حاجة هتتحكم فيك" }
+      { id: "13KPaJAtvGmZlmpUO_LmuIU8euLTRuhoL", titleEn: "Sitting Pain & Surgical Relief — 01", titleAr: "القعدة بقت بتوجعك؟ — 1" },
+      { id: "14Kkp7kdL5XboDQjjE8OE_YvQKb-wxBJw", titleEn: "Clinical Diagnosis & Care — 02", titleAr: "التشخيص والعلاج الجراحي — 2" },
+      { id: "1IeNKPn9Lz4waWIeaDxcg5tkqVgh0OnI6", titleEn: "Minimally Invasive Treatment — 03", titleAr: "الحل الطبي السريع — 3" },
+      { id: "1RCHHza_X3sOBVZgnyLbt1h02F9kLYNyi", titleEn: "Safe Recovery & Consultation — 04", titleAr: "التعافي الآمن والاستشارة — 4" }
     ]
   },
   {
-    idx: "D—06",
+    idx: "D—03",
     key: "dr_amr_abdelbary",
     clientEn: "Dr. Amr Abdelbary — Vascular Surgery",
     clientAr: "د. عمرو عبدالباري — جراحة الأوعية الدموية",
@@ -202,7 +153,7 @@ const DESIGN_CLIENTS = [
     ]
   },
   {
-    idx: "D—07",
+    idx: "D—04",
     key: "dr_ahmed_salah",
     clientEn: "Dr. Ahmed Salah — Dental & Implants Center",
     clientAr: "د. أحمد صلاح — زراعة وتجميل الأسنان",
@@ -218,7 +169,7 @@ const DESIGN_CLIENTS = [
     ]
   },
   {
-    idx: "D—08",
+    idx: "D—05",
     key: "global_scan",
     clientEn: "Global Scan — Radiology & Diagnostics",
     clientAr: "مركز جلوبال سكان — للأشعة والتشخيص الطبي",
@@ -231,6 +182,40 @@ const DESIGN_CLIENTS = [
       { id: "1sG0ee1Ksv0MtD2pUDhU00lIwGZUyarhw", titleEn: "Interactive Diagnostic Awareness", titleAr: "توعية طبية تفاعلية" },
       { id: "1ktajL5J9ktn9E9V1s93coTj1VsmxAwry", titleEn: "Diagnostic Care Story", titleAr: "دقة التشخيص الطبي" },
       { id: "1d04hIrgTJV3yzRz8xv32zRZjA6H6VnVN", titleEn: "Medical Radiology Q&A", titleAr: "سؤال وجواب طبي" }
+    ]
+  },
+  {
+    idx: "D—06",
+    key: "suhail_coffee",
+    clientEn: "Suhail — Authentic Arabic Coffee",
+    clientAr: "قهوة سُهيل — Suhail Arabic Coffee",
+    sectorEn: "Commercial · Arabic Coffee Brand",
+    sectorAr: "علامة قهوة عربية فاخرة",
+    region: "EGY · KSA · UAE",
+    designs: [
+      { id: "1OvvwNfza-BwcPRvJG0vW1oKC0DSz3lNW", titleEn: "Authentic Arabic Coffee", titleAr: "أصالة القهوة العربي" },
+      { id: "11eXJwDk13viPgk287aMQS7BqwDprAdIk", titleEn: "Suhail Signature Blend", titleAr: "مذاق قهوة سُهيل" },
+      { id: "171uHjYranlykgy6ZLH4vY9S_hQoaLkwM", titleEn: "Quarter Cup — Arabic Hospitality", titleAr: "ربع الفنجان — قمة الكرم العربي" },
+      { id: "1QDZ00MaFXxOOvi2xsxjWKjT1CEaefoX-", titleEn: "Suhail Story Carousel — 01", titleAr: "كاروسيل قهوة سُهيل — 1" },
+      { id: "1fHlo4mcTBCLFnZ9rx--VIwL9cSzwDn7_", titleEn: "Suhail Story Carousel — 02", titleAr: "كاروسيل قهوة سُهيل — 2" },
+      { id: "1hh2hzSzUkVD6PqJdLi0kplPxvG-YZnXI", titleEn: "Suhail Story Carousel — 03", titleAr: "كاروسيل قهوة سُهيل — 3" },
+      { id: "1g7pyIfIt4FR773GYUHWW6uIQNWUlW55E", titleEn: "Suhail Story Carousel — 04", titleAr: "كاروسيل قهوة سُهيل — 4" }
+    ]
+  },
+  {
+    idx: "D—07",
+    key: "safes_shop",
+    clientEn: "Safes Shop — Security Systems",
+    clientAr: "Safes Shop لأنظمة الأمان والخزائن",
+    sectorEn: "Commercial · Security",
+    sectorAr: "أنظمة أمان وخزائن",
+    region: "EGY",
+    designs: [
+      { id: "1om5mSLhCUBSo6SKiAu8SPkCIhXMP_RXt", titleEn: "Smart Security Must Be Intelligent", titleAr: "الأمان لازم يكون ذكي" },
+      { id: "1FJ_lTn9_j_h40V9a4uTwYq1llHXTOkyI", titleEn: "Extreme Impact Resistance", titleAr: "مقاومة فائقة للصدمات" },
+      { id: "1tC2kNoCFBFIXHdj7PUv_cmh9GPJn0Ewu", titleEn: "Fireproof Safe Engineering", titleAr: "حماية قصوى ضد الحريق" },
+      { id: "1u7FyNiZnBE5o5Z7jGP3Sdhvwe77QJDJM", titleEn: "Your Security Is Our Mission", titleAr: "أمانك مسؤوليتنا" },
+      { id: "1FS_h9lmPXK_teMtuT1WU1PE1uXJtTlps", titleEn: "Corporate Security Setup", titleAr: "بنجهز شركتك بأعلى أمان" }
     ]
   }
 ];
@@ -493,7 +478,7 @@ function renderDesigns() {
             <span class="dc-pill muted">${client.region}</span>
           </div>
         </div>
-        <div class="design-strip">
+        <div class="design-strip cols-${client.designs.length}">
           ${cardsHtml}
         </div>
       </div>
