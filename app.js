@@ -22,6 +22,19 @@ const FEATURED_EDITORIAL = [
   },
   {
     idx: "P—02",
+    id: "1K8AMm-S-ip3gCMKxK_nrnI71yBxDEAub",
+    customThumb: "before-after-thumb.jpg",
+    isWide: true,
+    title: "Before & After — Cinematic Reel Montage & Grading",
+    titleAr: "قبل وبعد — مونتاج وتلوين ومؤثرات الريلز الاحترافية",
+    desc: "A side-by-side transformation from raw, unedited camera footage into a high-retention final cut — featuring cinematic color grading, kinetic captions, custom motion graphics, and immersive sound design.",
+    descAr: "مقارنة حية (قبل وبعد) توضح تحويل التصوير الخام غير المعدل إلى ريلز سينمائي خاطف للانتباه — من خلال التلوين السينمائي، والكتابة المتحركة (Kinetic Captions)، والموشن جرافيك، والمؤثرات الصوتية.",
+    direction: "Direction — pacing, color grade, motion graphics & sound design.",
+    directionAr: "الإخراج — إيقاع المونتاج، التلوين السينمائي، الموشن جرافيك والمؤثرات الصوتية.",
+    tags: ["Reel Montage", "Color Grade + Motion", "EGY · KSA · UAE"]
+  },
+  {
+    idx: "P—03",
     id: "1kCFvNdgEC2WYJObdbv4EPuKlD9lx4wgP",
     title: "Safes Shop — 'The Tank' Commercial",
     titleAr: "Safes Shop لأنظمة الأمان — إعلان الدبابة",
@@ -30,17 +43,6 @@ const FEATURED_EDITORIAL = [
     direction: "Direction — dramatic scale that stops the scroll.",
     directionAr: "الإخراج — مشهد درامي يخطف الانتباه من اللحظة الأولى.",
     tags: ["Commercial Brand", "AI VFX + Edit", "EGY"]
-  },
-  {
-    idx: "P—03",
-    id: "1g7YyZlvHBz3i0ZnW30OwRSXSpUrae4Nk",
-    title: "V Cola — Viral AI Commercial",
-    titleAr: "إعلان V Cola — حملة إعلانية بالذكاء الاصطناعي",
-    desc: "High-energy beverage commercial crafted with dynamic AI fluid simulation, vibrant lighting, and fast-paced editorial rhythm.",
-    descAr: "إعلان تجاري سينمائي لعلامة V Cola يجمع بين الحيوية، والمؤثرات البصرية الخاطفة، والإخراج الإعلاني السريع بالذكاء الاصطناعي.",
-    direction: "Direction — vibrant motion and commercial energy.",
-    directionAr: "الإخراج — حيوية بصرية وإيقاع إعلاني خاطف.",
-    tags: ["Commercial Brand", "AI Commercial Film", "EGY · KSA"]
   },
   {
     idx: "P—04",
@@ -80,7 +82,7 @@ const FEATURED_EDITORIAL = [
 /* ---------- Latest 15 Curated Videos (Selected from 1000+ Projects) ---------- */
 const ALL_VIDEOS = [
   { id: "1CB0rZjYRNlVtHZxsf3E3qGWRc8wISz4s", title: "Ajwad Real Estate — National Day Film", titleAr: "أجود للعقارات — فيلم اليوم الوطني السعودي", folder: "أجود للعقارات", category: "realestate", region: "KSA" },
-  { id: "1g7YyZlvHBz3i0ZnW30OwRSXSpUrae4Nk", title: "V Cola — AI Commercial Campaign", titleAr: "إعلان V Cola بالذكاء الاصطناعي", folder: "V Cola", category: "commercial", region: "EGY · KSA" },
+  { id: "1K8AMm-S-ip3gCMKxK_nrnI71yBxDEAub", customThumb: "before-after-thumb.jpg", isWide: true, title: "Before & After — Cinematic Reel Montage", titleAr: "قبل وبعد — مونتاج وتلوين ريلز احترافي", folder: "Reel Montage", category: "commercial", region: "EGY · KSA · UAE" },
   { id: "1U2Y2qQB2Ln7qKl28Y2gNNcvHu05_w5uY", title: "Tahakom Law Firm — Corporate AI Spot", titleAr: "تحاكم للمحاماة — إعلان رسمي بالذكاء الاصطناعي", folder: "تحاكم للمحاماة", category: "legal", region: "KSA" },
   { id: "1Q8rFkpYcS-BHZW4JH-j9s7QL-nKrvx0w", title: "Tahakom Law Firm — National Day Film", titleAr: "تحاكم للمحاماة — فيلم اليوم الوطني", folder: "تحاكم للمحاماة", category: "legal", region: "KSA" },
   { id: "1kCFvNdgEC2WYJObdbv4EPuKlD9lx4wgP", title: "Safes Shop — The Tank Safe Ad", titleAr: "Safes Shop لأنظمة الأمان — إعلان الدبابة", folder: "Safes Shop", category: "commercial", region: "EGY" },
@@ -340,12 +342,14 @@ function renderFeaturedEditorial() {
     const title = currentLang === 'ar' ? p.titleAr : p.title;
     const desc = currentLang === 'ar' ? p.descAr : p.desc;
     const dir = currentLang === 'ar' ? p.directionAr : p.direction;
-    const thumb = getDriveThumbnail(p.id, "w1200");
+    const thumb = p.customThumb || getDriveThumbnail(p.id, "w1200");
     const watchLbl = currentLang === 'ar' ? 'تشغيل الفيديو بالجودة الكاملة ←' : 'Watch in full quality →';
+    const wideAttr = p.isWide ? 'true' : 'false';
+    const wideClass = p.isWide ? ' wide' : '';
 
     return `
       <article class="proj">
-        <div class="thumb mask-rv" data-cursor="play" onclick="openModal('${p.id}')">
+        <div class="thumb${wideClass} mask-rv" data-cursor="play" onclick="openModal('${p.id}', ${wideAttr})">
           <img src="${thumb}" alt="${title}" loading="lazy" referrerpolicy="no-referrer" />
           <span class="glow"></span>
           <span class="play-indicator">▶</span>
@@ -358,7 +362,7 @@ function renderFeaturedEditorial() {
           <div class="meta">
             ${p.tags.map(t => `<span>${t}</span>`).join('')}
           </div>
-          <span class="open" onclick="openModal('${p.id}')" data-cursor="play" role="button" tabindex="0">${watchLbl}</span>
+          <span class="open" onclick="openModal('${p.id}', ${wideAttr})" data-cursor="play" role="button" tabindex="0">${watchLbl}</span>
         </div>
       </article>
     `;
@@ -387,10 +391,11 @@ function renderVault() {
     const title = currentLang === 'ar' ? item.titleAr : item.title;
     const catInfo = CATEGORY_LABELS[item.category] || CATEGORY_LABELS.commercial;
     const catLabel = currentLang === 'ar' ? catInfo.ar : catInfo.en;
-    const thumb = getDriveThumbnail(item.id, "w800");
+    const thumb = item.customThumb || getDriveThumbnail(item.id, "w800");
+    const wideAttr = item.isWide ? 'true' : 'false';
 
     return `
-      <div class="v-card rv" data-cursor="play" onclick="openModal('${item.id}')">
+      <div class="v-card rv" data-cursor="play" onclick="openModal('${item.id}', ${wideAttr})">
         <div class="v-thumb">
           <img src="${thumb}" alt="${title}" loading="lazy" referrerpolicy="no-referrer" />
           <div class="v-shade"></div>
@@ -495,9 +500,10 @@ const modalIframe = document.getElementById('modalIframe');
 const modalImage = document.getElementById('modalImage');
 const mClose = document.getElementById('modalClose');
 
-function openModal(driveId) {
+function openModal(driveId, isWide = false) {
   if (!modal || !modalIframe) return;
   modal.classList.remove('img-mode');
+  modal.classList.toggle('wide-mode', !!isWide);
   if (modalImage) {
     modalImage.src = '';
     modalImage.style.display = 'none';
@@ -510,6 +516,7 @@ function openModal(driveId) {
 
 function openImageModal(driveId, altTitle = '') {
   if (!modal || !modalImage) return;
+  modal.classList.remove('wide-mode');
   modal.classList.add('img-mode');
   if (modalIframe) {
     modalIframe.src = '';
@@ -532,7 +539,7 @@ function closeModal() {
     modalImage.src = '';
     modalImage.style.display = 'none';
   }
-  modal.classList.remove('open', 'img-mode');
+  modal.classList.remove('open', 'img-mode', 'wide-mode');
   document.body.style.overflow = '';
 }
 
